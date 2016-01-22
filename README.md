@@ -1,9 +1,8 @@
 free-resources
-============================
-## 前言
+==========================
 此项目基于[free-programming-books](https://github.com/vhf/free-programming-books)，外加个人学习笔记，持续更新！
 
-## 内容
+*********
 
 ### 数据库 
 [见目录`/Database`](/Database)
