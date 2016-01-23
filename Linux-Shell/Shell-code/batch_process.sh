@@ -1,3 +1,4 @@
+# batch_process.sh 批处理目录树下的子文件
 path="./src"
 directions=`ls ${path}`
 mkdir "./dst"

@@ -251,3 +251,5 @@ __单字段主键__
 属性名 数据类型 PRIMARY KEY  
 __多字段主键__    
 PRIMARY KEY(属性名1, 属性名2,…,属性名n)
+
+http://blog.csdn.net/kimsoft/article/details/7099245
