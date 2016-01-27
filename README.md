@@ -221,6 +221,7 @@ free-resources
 * [geeksforgeeks](http://www.geeksforgeeks.org/)  
 * [v2ex](https://v2ex.com/)  
 * [快课网](http://www.cricode.com/)  
+* <http://jinxuliang.com/>
 
 ### 面试
 * [码农翻墙去美帝 —— 系统设计准备](http://blog.sina.com.cn/s/blog_687bf5050102vawl.html)
