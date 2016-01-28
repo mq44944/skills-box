@@ -43,7 +43,7 @@
 * [8步从Python白板到专家，从基础到深度学习](http://dataunion.org/15057.html)  
 * [机器学习经典算法详解及Python实现 | Adan](http://blog.csdn.net/suipingsp/article/category/2749113)   
 * [机器学习算法系列 | null的专栏](http://blog.csdn.net/google19890102/article/details/39781573)  
-
+* [数据挖掘 | CodeMeals](http://www.cnblogs.com/fengfenggirl/tag/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/)
 ********* 
 
 * [机器学习入门资源不完全汇总](http://ml.memect.com/article/machine-learning-guide.html)
@@ -67,7 +67,7 @@
 ### 2.3 数据降维
 PCA
 SVD
-
+* [Scikit-Learn实用案例](http://muxuezi.github.io/posts/1-premodel-workflow.html)
 
 # 3、特征工程 
 * 《Selecting good features》特征工程系列文章  
@@ -92,6 +92,7 @@ SVD
 * [Techniques to improve the accuracy of your Predictive Models](http://pan.baidu.com/s/1mgKPzo0)
 * [Techniques to improve the accuracy of your Predictive Models.pdf](http://pan.baidu.com/s/1eQCokPs)
 * [introduction-ensemble-learning](http://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/)  
+【应对非均衡数据集分类问题的八大策略】《8 Tactics to Combat Imbalanced Classes in Your Machine Learning Dataset》by Jason Brownlee http://t.cn/RLe4MJc
 
 # 4、集成学习(ensemble learning)算法
 [【机器学习基础】混合和装袋](http://www.jianshu.com/p/037e1bad9fa8)  
@@ -105,10 +106,12 @@ SVD
    * 自适应提升树 AdaBoost  
      [【机器学习基础】自适应提升](http://www.jianshu.com/p/2d5db988662a)   
      [【机器学习基础】梯度提升决策树](http://www.jianshu.com/p/819a21e1e8ef)  
+[Random Forest 与 GBDT 的异同](http://blog.csdn.net/wh137795233/article/details/47750151)
 
 # 5、技术博客&网站
 * [算法组](http://suanfazu.com/)  
 * [火光摇曳](http://www.flickering.cn/)  
+https://muxuezi.github.io/
 
 # 6、数据挖掘比赛
 * [kaggle](https://www.kaggle.com/)
