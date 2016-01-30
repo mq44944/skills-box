@@ -1,3 +1,6 @@
+Python一些基础面试题目总结 http://mp.weixin.qq.com/s?__biz=MzA3MDg0MjgxNQ==&mid=207591081&idx=1&sn=19a2bf278dd112ff5025bc772d13ac8c#rd
+
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 

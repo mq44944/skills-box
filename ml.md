@@ -38,6 +38,7 @@
 
 # 2、机器学习
 ### 2.1 总结性资料 
+* [十张图解释机器学习的基本概念](http://blog.jobbole.com/63748/)
 * [Data-Science-45min-Intros](https://github.com/DrSkippy/Data-Science-45min-Intros)
 * [机器学习与模式识别 | 简书](http://www.jianshu.com/collection/1395428608b4)  
 * [8步从Python白板到专家，从基础到深度学习](http://dataunion.org/15057.html)  
@@ -45,7 +46,7 @@
 * [机器学习算法系列 | null的专栏](http://blog.csdn.net/google19890102/article/details/39781573)  
 * [数据挖掘 | CodeMeals](http://www.cnblogs.com/fengfenggirl/tag/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/)
 ********* 
-
+* [机器学习算法之旅](http://blog.jobbole.com/60809/)
 * [机器学习入门资源不完全汇总](http://ml.memect.com/article/machine-learning-guide.html)
 * [tornadomeet资料目录](http://www.cnblogs.com/tornadomeet/archive/2012/05/24/2515980.html)  
 * [mastering-machine-learning-scikit-learn中文版](https://muxuezi.github.io/posts/0-perface.html) 
@@ -54,6 +55,7 @@
 * [机器学习算法基础概念学习总结](http://blog.jobbole.com/74716/)  
 * [机器学习算法基础知识](http://www.36dsj.com/archives/8911)  
 * [数据挖掘18大算法实现以及其他相关经典DM算法](https://github.com/linyiqun/DataMiningAlgorithm)
+效果超乎解释的随机森林方法  http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDQ3Mw==&mid=208653419&idx=1&sn=1d0ccfc26c1fe8ce1245a0763e28b060&scene=0#rd   
 
 ### 2.2 其他杂项
 * [Ultimate guide for Data Exploration in Python using NumPy, Matplotlib and Pandas]
@@ -63,6 +65,10 @@
 * [网上又一位牛人的Machine Learning实验笔记]
 (http://blog.csdn.net/denghp83/article/details/8996662#0-tsina-1-56037-397232819ff9a47a7b7e80a40613cfe1)
 * [Bin的专栏  Machine Learning](http://www.cnblogs.com/xbinworld/tag/Machine%20Learning/)
+【Logistic回归 vs. 决策树 vs. SVM】《Logistic Regression Vs Decision Trees Vs SVM》by Lalit Sachan Part1:http://t.cn/RUueao2 Part2:http://t.cn/RUueaoA
+[
+Liam Q的专栏
+专注于数据分析与处理](http://blog.csdn.net/qll125596718/article/category/909565/2)
 
 ### 2.3 数据降维
 PCA
@@ -93,6 +99,17 @@ SVD
 * [Techniques to improve the accuracy of your Predictive Models.pdf](http://pan.baidu.com/s/1eQCokPs)
 * [introduction-ensemble-learning](http://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/)  
 【应对非均衡数据集分类问题的八大策略】《8 Tactics to Combat Imbalanced Classes in Your Machine Learning Dataset》by Jason Brownlee http://t.cn/RLe4MJc
+http://segmentfault.com/a/1190000003719712
+机器学习中的常见问题——几种梯度下降法 http://blog.csdn.net/google19890102/article/details/48766869   
+
+[利用Python进行数据分析--数据规整化：清理、转换、合并、重塑 ](http://blog.csdn.net/u013524655/article/details/41291665)  
+[ 利用Python进行数据分析--绘图和可视化 ](http://blog.csdn.net/u013524655/article/details/41291715)  
+http://blog.csdn.net/u013524655/article/category/2693289
+
+[你用 Python 做过什么有趣的数据挖掘/分析项目？ ](http://mp.weixin.qq.com/s?__biz=MzA3MDg0MjgxNQ==&mid=205835343&idx=1&sn=0874f763cfe839902f686ece64182dfd#rd)  
+
+决策树算法介绍及应用  http://mp.weixin.qq.com/s?__biz=MjM5ODIzNDQ3Mw==&mid=208653419&idx=2&sn=7a9bb3f7350ea43cf4144b5497679521&scene=0#rd   
+
 
 # 4、集成学习(ensemble learning)算法
 [【机器学习基础】混合和装袋](http://www.jianshu.com/p/037e1bad9fa8)  
@@ -100,7 +117,9 @@ SVD
 基于数据随机重抽样的分类器构建方法
 
    * 随机森林（Random Forest）[【机器学习基础】随机森林算法](http://www.jianshu.com/p/667c9ea6cf96)
-
+随机森林入门攻略 http://mp.weixin.qq.com/s?__biz=MzA5NDQ3MDI4NA==&mid=209532025&idx=1&sn=90390e6faf1b03c786557234016fdee5#rd   
+[Spark 随机森林算法原理、源码分析及案例实战](https://www.ibm.com/developerworks/cn/opensource/os-cn-spark-random-forest/)   
+  
 ## Boosting
 
    * 自适应提升树 AdaBoost  

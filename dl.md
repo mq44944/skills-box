@@ -6,7 +6,7 @@
 #####希望转载的朋友，你可以不用联系我．但是**一定要保留原文链接**，因为这个项目还在继续也在不定期更新．希望看到文章的朋友能够学到更多．此外:某些资料在中国访问需要梯子.
 ---
 
-
+* [深度学习如何入门？ - 知乎](https://www.zhihu.com/question/26006703)
 * [《Brief History of Machine Learning》](http://blog.csdn.net/bestlinjiayin/article/details/38848257/)
 
 介绍:这是一篇介绍机器学习历史的文章，介绍很全面，从感知机、神经网络、决策树、SVM、Adaboost到随机森林、Deep Learning.
