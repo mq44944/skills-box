@@ -4,7 +4,7 @@ free-resources
 
 *********
 
-### 数据库 
+### 数据库  
 [见目录`/Database`](/Database)
 
 ### 操作系统
@@ -13,19 +13,11 @@ free-resources
 ### 计算机网络协议
 [见目录`TCP_IP-Notes`](/TCP_IP-Notes)
 
-### [设计模式，见目录`/Design-Patterns`](/Design-Patterns)
+### 设计模式
+[见目录`/Design-Patterns`](/Design-Patterns)
   
-### [Linux Shell，见目录`Linux-Shell`](/Linux-Shell)
-
-### Web
-* [HTTP 下午茶](http://happypeter.github.io/tealeaf-http/)
-* [HTTP/2.0 中文翻译](http://yuedu.baidu.com/ebook/478d1a62376baf1ffc4fad99?pn=1)
-
-### Linux
-* [The Linux Command Line](http://billie66.github.io/TLCL/index.html) (中英文版)
-
-### 正则表达式
-* [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
+### Linux Shell
+[见目录`Linux-Shell`](/Linux-Shell)
 
 
 ### 版本控制
@@ -51,7 +43,7 @@ free-resources
 * [猴子都能懂的GIT入门](http://backlogtool.com/git-guide/cn/)
 
 
-### 编辑器
+### Vim
 * [exvim--vim 改良成IDE项目](http://exvim.github.io/docs-zh/intro/)
 * [tmux:高效的全键盘开发工具](https://github.com/aqua7regia/tmux-Productive-Mouse-Free-Development_zh)
 * [Vim中文文档](https://github.com/vimcn/vimcdoc)
