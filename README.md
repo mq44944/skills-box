@@ -1,6 +1,6 @@
-free-resources
+skills-box
 ==========================
-此项目基于[free-programming-books](https://github.com/vhf/free-programming-books)，外加个人学习笔记，持续更新！
+My technology stack, Keep going! 
 
 *********
 
