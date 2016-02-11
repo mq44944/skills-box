@@ -8,10 +8,7 @@ free-resources
 [见目录`/Database`](/Database)
 
 ### 操作系统
-* [《现代操作系统》读书笔记—死锁篇](http://www.nowcoder.com/discuss/3567?type=1&order=4&pos=8&page=1)  
-* [《现代操作系统》读书笔记—进程与线程篇](http://www.nowcoder.com/discuss/3568?type=1&order=4&pos=3&page=0)  
-* [《现代操作系统》读书笔记—文件系统篇](http://www.nowcoder.com/discuss/3569?type=1&order=4&pos=5&page=1)
-* [《现代操作系统》读书笔记-内存管理篇](http://www.nowcoder.com/discuss/3570?type=1&order=4&pos=6&page=1)  
+[见目录`/OS-Notes`](/OS-Notes)
 
 ### 计算机网络协议
 [见目录`TCP_IP-Notes`](/TCP_IP-Notes)
@@ -221,7 +218,7 @@ free-resources
 * [geeksforgeeks](http://www.geeksforgeeks.org/)  
 * [v2ex](https://v2ex.com/)  
 * [快课网](http://www.cricode.com/)  
-* <http://jinxuliang.com/>
+* [金老师的教育网站 - 在线课程](http://jinxuliang.com/course)
 
 ### 面试
 * [码农翻墙去美帝 —— 系统设计准备](http://blog.sina.com.cn/s/blog_687bf5050102vawl.html)

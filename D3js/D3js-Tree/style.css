@@ -1,0 +1,23 @@
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #ffffff;
+    stroke: #4682B4;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #cccccc;
+    stroke-width: 1.5px;
+}
+body {
+    <!-- 内容会被修剪，并且其余内容是不可见的。 -->
+    overflow: hidden;
+}

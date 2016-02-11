@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> New Document </title>
+    <meta name="Author" content="yew1eb">
+    <meta name=keywords content="">
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width">
+    <meta http-equiv=content-type content="text/html;charset=utf-8">
+    <style>
+
+.node circle {
+  cursor: pointer;
+  stroke: #5ca8db;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 14px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+        .link {
+            fill: none;
+            stroke: #5ca8db;
+            stroke-opacity: .6;
+        }
+    </style>
+
+</head>
+
+<body>
+<script src="http://libs.useso.com/js/d3/3.4.8/d3.min.js" charset="utf-8"></script>
+<script>
+
+    var width = 1140,
+            height = 940;
+
+    //构造一个有20种颜色的序数比例尺
+    var colors = d3.scale.category20();
+
+    var force = d3.layout.force()
+            .charge(-1500) //负数为排斥 正数为吸引
+            .linkDistance(150) //连线的长度
+            .size([width, height * 0.75]); //作用力的中心区域
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+    d3.json("data.json", function (error, graph) {
+        force
+                .nodes(graph.nodes)//指定节点数组
+                .links(graph.links)//指定连线数组
+                .start();
+        //添加连线
+        var link = svg.selectAll(".link")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("class", "link")
+                .style("stroke-width", function (d) {
+                    return Math.sqrt(d.value);
+                });
+        //添加节点
+        var node = svg.selectAll(".node")
+                .data(graph.nodes)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(force.drag)
+                .on("click", function (d) {
+                    d3.event.defaultPrevented || window.open(d.href)
+                });
+
+        node.append("circle")
+                .attr("r", 25)
+                .style("fill", function (d) {
+                    return colors(d.group);
+                });
+
+        //添加描述节点的文字
+        node.append("text")
+                .attr("dx",-20) //文字相对node中心的移动
+                .attr("dy",5)
+                .text(function (d) {
+                    return d.name;
+                });
+
+
+        force.on("tick", function () {
+            link.attr("x1", function (d) {
+                        return d.source.x;
+                    })
+                    .attr("y1", function (d) {
+                        return d.source.y;
+                    })
+                    .attr("x2", function (d) {
+                        return d.target.x;
+                    })
+                    .attr("y2", function (d) {
+                        return d.target.y;
+                    });
+            node.attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+        });
+
+    });
+
+</script>
+</body>
+</html>
