@@ -13,3 +13,6 @@ https://bl.ocks.org/mbostock/4339083
 
 D3.js Tree Layout chart
 http://codepen.io/augbog/pen/LEXZKK
+
+Data Visualization and D3.js  
+<https://www.udacity.com/courses/ud507>
