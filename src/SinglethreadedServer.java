@@ -9,14 +9,14 @@ import java.io.OutputStream;
  * 单线程Server
  */
 
-public class SingleThreadedServer implements Runnable{
+public class SinglethreadedServer implements Runnable{
 
     protected int          serverPort   = 8080;
     protected ServerSocket serverSocket = null;
     protected boolean      isStopped    = false;
     protected Thread       runningThread= null;
 
-    public SingleThreadedServer(int port){
+    public SinglethreadedServer(int port){
         this.serverPort = port;
     }
 
@@ -85,7 +85,7 @@ public class SingleThreadedServer implements Runnable{
     }
 
     public static void main(String args[]) {
-        SingleThreadedServer server = new SingleThreadedServer(9000);
+        SinglethreadedServer server = new SinglethreadedServer(9000);
         new Thread(server).start();
 
         try {

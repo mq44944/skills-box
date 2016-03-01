@@ -1,4 +1,5 @@
-﻿import java.awt.BorderLayout;
+﻿package SocketServer;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 
-public class Sclient{
+public class Client {
 	private PrintWriter pw;
 	private JFrame frame;
 	private JPanel pane_buttom;
@@ -31,7 +32,7 @@ public class Sclient{
 	private Dimension dimension;//用于设置area_showWindow可拖拉的大小
 
 	//初始化
-	public Sclient() {
+	public Client() {
 		frame = new JFrame();
 		pane_buttom = new JPanel();
 		pane_showWindow = new JScrollPane();
@@ -92,7 +93,7 @@ public class Sclient{
 			}
 		});
 	}
-	
+
 	private void socket(){
 		try {
 			Socket s = new Socket("127.0.0.1",9988);
@@ -111,7 +112,7 @@ public class Sclient{
 		}
 	}
 	public static void main(String[] args) {
-		Sclient chat = new Sclient();
+		Client chat = new Client();
 		chat.showFrame();
 	}
 }

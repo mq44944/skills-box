@@ -17,7 +17,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 
 public class Server{
-	
+
 	private PrintWriter pw;
 	private JFrame frame;
 	private JPanel pane_buttom;
@@ -28,7 +28,7 @@ public class Server{
 	private JScrollPane pane_inputWindow;
 	private JTextArea area_showWindow;
 	private JTextArea area_inputWindow;
-	
+
 	private JButton btn_send;
 
 	private Dimension dimension;//用于设置area_showWindow可拖拉的大小
