@@ -40,8 +40,6 @@ My technology stack, Keep going!
 * [v2ex](https://v2ex.com/)  
 * [快课网](http://www.cricode.com/)  
 * [金老师的教育网站 - 在线课程](http://jinxuliang.com/course)
-
-### 面试
 * [码农翻墙去美帝 —— 系统设计准备](http://blog.sina.com.cn/s/blog_687bf5050102vawl.html)
 * [NowCoder](http://www.nowcoder.com)
 
