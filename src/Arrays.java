@@ -6,7 +6,7 @@ public class Arrays {
     }
 
     public static void print(int[] arr) {
-        for(int x = 0; x < arr.length ; ++x) {
+        for(INT x = 0; x < arr.length ; ++x) {
             if(x < arr.length - 1) {
                 System.out.print(arr[x] + ",");
             } else {
