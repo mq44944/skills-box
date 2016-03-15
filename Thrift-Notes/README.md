@@ -1,7 +1,7 @@
 ### Apache Thrift 跨语言服务开发框架
 Thrift最初由Facebook研发，主要用于各个服务之间的RPC通信，支持跨语言，常用的语言比如C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js, Smalltalk, and OCaml都支持。Thrift是一个典型的CS（客户端/服务端）结构，客户端和服务端可以使用不同的语言开发。既然客户端和服务端能使用不同的语言开发，那么一定就要有一种中间语言来关联客户端和服务端的语言，没错，这种语言就是IDL（Interface Description Language）。
 
-Apache Thrift 不仅支持定义 RPC 服务接口，还提供了支持 RPC 服务实现的完整的堆栈结构，并为 RPC 服务的 Server 端和 Client 端直接生成了可用代码。如下图描绘了 Thrift 的堆栈架构。
+Apache Thrift 不仅支持定义 RPC 服务接口，还提供了支持 RPC 服务实现的完整的堆栈结构，并为 RPC 服务的 Server 端和 Client 端直接生成了可用代码。如下图描绘了 Thrift 的堆栈架构。  
 ![](http://images.cnitblog.com/blog/175043/201501/132207169643199.png)
 
 #### 传输层（Transport）
