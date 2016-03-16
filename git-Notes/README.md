@@ -72,10 +72,33 @@ $ git push origin --delete serverfix
 查看分支的信息
 git branch -v
 
-rebase使用 
-http://wiki.sankuai.com/pages/viewpage.action?pageId=145064463
+#### 使用git rebase合并多次commit
+##### 1.首先使用git log查看一下提交历史
+##### 2. git 压缩  git rebase -i HEAD~4
+该命令执行后，会弹出一个编辑窗口，4次提交的commit倒序排列，最上面的是最早的提交，最下面的是最近一次提交
 
-### 参考资料
+    pick 5e187c7dbe8    add center style indent  
+    squash 6d577eb3440  add center style  
+    squash f9b9508a3ab  add center style  
+    squash 111ab9cc261  update templates  
+    # Rebase 150a643..2fad1ae onto 150a643  
+    #  
+    # Commands:  
+    #  p, pick = use commit  
+    #  r, reword = use commit, but edit the commit message  
+    #  e, edit = use commit, but stop for amending  
+    #  s, squash = use commit, but meld into previous commit  
+    #  f, fixup = like "squash", but discard this commit's log message  
+    #  x, exec = run command (the rest of the line) using shell 
+    
+修改第2-4行的第一个单词pick为squash，当然看一下里面的注释就理解含义了
+
+git add .  
+git rebase --continue  
+
+git push -f 
+
+#### 参考资料
 * [Git 常用命令详解](http://blog.csdn.net/sunboy_2050/article/details/7529022)
 * <https://git-scm.com/book/zh/v2>
 * [Git - 简易指南](http://rogerdudler.github.io/git-guide/index.zh.html)
