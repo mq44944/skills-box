@@ -10,6 +10,8 @@
 添加评注
 
 	git commit -m "代码提交信息"
+	
+![](http://7xi2wq.com1.z0.glb.clouddn.com/20160317142617.jpg)
 
 将你的仓库连接到某个远程服务器（新仓库，第一次push之前）
 
@@ -18,6 +20,30 @@
 将改动提交到远程仓库
 
 	git push origin master
+
+远程仓库相关命令
+
+	检出仓库 git clone git://github.com/jquery/jquery.git
+	查看远程仓库：$ git remote -v
+	添加远程仓库：$ git remote add [name] [url]
+	删除远程仓库：$ git remote rm [name]
+	修改远程仓库：$ git remote set-url --push [name] [newUrl]
+	拉取远程仓库：$ git pull [remoteName] [localBranchName]
+	推送远程仓库：$ git push [remoteName] [localBranchName]
+	
+分支(branch)操作相关命令
+
+	查看本地分支：$ git branch
+	查看所有分支：$ git branch -a 
+	查看远程分支：$ git branch -r
+	创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支
+	切换分支：$ git checkout [name]
+	创建新分支并立即切换到新分支：$ git checkout -b [name]
+	切换到远程dev分支：$ git checkout --track origin/dev
+	删除分支：$ git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项
+	合并分支：$ git merge [name] ----将名称为[name]的分支与当前分支合并
+	创建远程分支(本地分支push到远程)：$ git push origin [name]
+	删除远程分支：$ git push origin :heads/[name] 或 $ git push origin :[name] 
 
 ------------
 
@@ -71,7 +97,7 @@
 	git tag 1.0.0 1b2e1d63ff
 	1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：
 	git log
-	
+	git tag --help
 你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
 
 
@@ -115,23 +141,27 @@ git checkout -- <filename>
     
 修改第2-4行的第一个单词pick为squash，当然看一下里面的注释就理解含义了
 
-git add .  
-git rebase --continue  
+解决冲突后继续重置：
 
-git push -f 
+	git rebase --continue
+	git add .  
+	git rebase --continue  
+	
+	git push -f 
 
 ------------
 
 
 ### 6.解决冲突(git fetch + git merge)
 #### 1. 拉取
-默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。
+默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。  
+注意：git fetch命令拉取回来的分支，并不会合并到HEAD中。
 
 	git fetch <远程主机名> <分支名>  
 eg. git fetch http://git.sankuai.com/scm/wm/waimai_service_bizauth_client.git master
 #### 2. 合并
 
-	git checkout master
+	git checkout develop
 	git merge FETCH_HEAD
 	
 	＃ 合并后，git diff 查看冲突的地方，修正，接下来提交
@@ -139,27 +169,39 @@ eg. git fetch http://git.sankuai.com/scm/wm/waimai_service_bizauth_client.git ma
 	git commit -am "update"
 	git push http://git.sankuai.com/scm/\~zhouhai02/waimai_service_bizauth_client.git HEAD
 
+
+### 7. 查看历史提交
+
+	显示所有提交：$ git log
+	显示某个用户的所有提交：$ git log --author="username"  
+	显示某个文件的所有修改：$ git log -p <file>
+
+### 8. 回滚
+放弃工作目录下的所有修改：
+
+	$ git reset --hard HEAD
+	
+将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
+
+	$ git reset --hard <commit>
+移除缓存区的所有文件（i.e. 撤销上次git add）:
+
+	$ git reset HEAD
+放弃某个文件的所有本地修改：
+
+	$ git checkout HEAD <file>
+重置一个提交（通过创建一个截然不同的新提交）
+
+	$ git revert <commit>
+将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：
+
+	$ git reset <commit>
+将HEAD重置到上一次提交的版本，并保留未提交的本地修改：
+
+	$ git reset --keep <commit>
+
 ------------
 
-
 #### 参考资料
-* [Git 常用命令详解](http://blog.csdn.net/sunboy_2050/article/details/7529022)
-* <https://git-scm.com/book/zh/v2>
-* [Git - 简易指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-* [Git-Cheat-Sheet](https://github.com/flyhigher139/Git-Cheat-Sheet) （感谢 @flyhigher139 翻译了中文版）
-* [Git Community Book 中文版](http://gitbook.liuhui998.com)
-* [git-flow 备忘清单](http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html)
-* [Git 参考手册](http://gitref.justjavac.com)
-* [Github帮助文档](https://github.com/waylau/github-help)
-* [GitHub秘籍](https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/)
-* [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000) （本文由 [@廖雪峰](http://weibo.com/liaoxuefeng) 创作，如果觉得本教程对您有帮助，可以去 [iTunes](https://itunes.apple.com/cn/app/git-jiao-cheng/id876420437) 购买）
-* [Got GitHub](https://github.com/gotgit/gotgithub)
-* [GotGitHub](http://www.worldhello.net/gotgithub/index.html)
-* [HgInit (中文版)](http://bucunzai.net/hginit/)
-* [Mercurial 使用教程](https://www.mercurial-scm.org/wiki/ChineseTutorial)
-* [Pro Git](https://git-scm.com/book/zh/v2)
-* [Pro Git 中文版](https://www.gitbook.com/book/0532/progit/details) (整理在gitbook上)
-* [svn 手册](http://svnbook.red-bean.com/nightly/zh/index.html)
-* [学习 Git 分支](http://pcottle.github.io/learnGitBranching/) (点击右下角按钮可切换至简体及正体中文)
-* [沉浸式学 Git](http://igit.linuxtoy.org/index.html)
-* [猴子都能懂的GIT入门](http://backlogtool.com/git-guide/cn/)
+* [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000) （本文由 [@廖雪峰](http://weibo.com/liaoxuefeng) 创作）
+* [Pro Git 官方中文文档](https://git-scm.com/book/zh/v2)
