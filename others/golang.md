@@ -1,4 +1,22 @@
-##Golang资料集
+
+* [Effective Go](http://www.hellogcc.org/effective_go.html)
+* [Go Web 编程](https://github.com/astaxie/build-web-application-with-golang)
+* [Go 入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN) (《The Way to Go》中文版)
+* [Go 官方文档翻译](https://github.com/golang-china/golangdoc.translations)
+* [Go 指南](http://go-tour-zh.appsp0t.com) (《A Tour of Go》中文版)
+* [Go 编程基础](https://github.com/Unknwon/go-fundamental-programming)
+* [Go 语言标准库](https://github.com/polaris1119/The-Golang-Standard-Library-by-Example)
+* [Go命令教程](https://github.com/hyper-carrot/go_command_tutorial)
+* [Go实战开发](https://github.com/astaxie/Go-in-Action) (当我收录此项目时，作者已经写完第三章，如果读完前面章节觉得有帮助，可以给作者[捐赠](https://me.alipay.com/astaxie)，以鼓励作者的继续创作)
+* [Go语言博客实践](https://github.com/achun/Go-Blog-In-Action)
+* [Java程序员的Golang入门指南](http://blog.csdn.net/dc_726/article/details/46565241)
+* [Network programming with Go 中文翻译版本](https://github.com/astaxie/NPWG_zh)
+* [Revel 框架手册](http://gorevel.cn/docs/manual/index.html)
+* [学习Go语言](http://mikespook.com/learning-go/)
+
+
+### Golang资料
+集
 
 * [《Platform-native GUI library for Go》](https://github.com/andlabs/ui)
 

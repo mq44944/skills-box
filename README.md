@@ -25,6 +25,8 @@ My technology stack, Keep going!
 ### 版本控制
 [见 `git-note.md`](/git-note.md)
 
+### 自动化构建
+[见 `git-note.md`](/git-note.md)
 
 ### 资源网站
 * [Jobbole伯乐在线](http://www.jobbole.com/)   
