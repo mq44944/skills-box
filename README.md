@@ -19,6 +19,11 @@ My technology stack, Keep going!
 ### Linux Shell
 [见目录`Linux-Shell`](/Linux-Shell)
 
+### LaTeX
+[见repo `resume`](https://github.com/yew1eb/resume/tree/master/Latex-Resources)
+
+### 版本控制
+[见 `git-note.md`](/git-note.md)
 
 
 ### 资源网站
