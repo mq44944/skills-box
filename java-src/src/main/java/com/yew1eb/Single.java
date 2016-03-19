@@ -1,3 +1,5 @@
+package com.yew1eb;
+
 /**
  * 2单例设计模式
 

@@ -48,7 +48,7 @@
 ------------
 
 ## 常用功能
-### 1.分支创建
+### 1.分支操作
 创建一个叫做“feature_x”的分支，并切换过去：  
 	
 	git checkout -b feature_x  
@@ -56,14 +56,25 @@
 切换回主分支：  
 
 	git checkout master  
-
-再把新建的分支删掉：  
-
-	git branch -d feature_x
 	
 除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
 	
 	git push origin <branch>
+
+	git branch -vv
+	
+删除本地分支：  
+
+	git branch -d feature_x
+删除远程分支：
+
+	git push --delete origin [branch]
+删除原称跟踪分支：
+
+	git branch -d -r
+清理远程跟踪分支：
+
+	git fetch -p
 
 ### 2.更新与合并
 要更新你的本地仓库至最新改动，执行：  
@@ -91,17 +102,24 @@
 	git diff <source_branch> <target_branch>
 
 
-### 3.标签
-为软件发布创建标签(版本号)是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：
+### 6.解决冲突(git fetch + git merge)
+#### 1. 拉取
+默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。  
+注意：git fetch命令拉取回来的分支，并不会合并到HEAD中。
 
-	git tag 1.0.0 1b2e1d63ff
-	1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：
-	git log
-	git tag --help
-你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。
+	git fetch <远程主机名> <分支名>  
+#### 2. 合并
 
-
+	git checkout <branch>
+	git merge FETCH_HEAD
+	
+	＃ 合并后，git diff 查看冲突的地方，修正，接下来提交
+	
+	git commit -am "update"
+	git push 
+	
 ### 4.替换本地改动
+
 假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：
 git checkout -- <filename>
 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。
@@ -117,6 +135,19 @@ git checkout -- <filename>
 	git remote show origin 
 	git push origin test:master         // 提交本地test分支作为远程的master分支
 	git push origin test:test              // 提交本地test分支作为远程的test分支
+
+------------
+
+### 3.标签
+为软件发布创建标签(版本号)是推荐的。这个概念早已存在，在 SVN 中也有。你可以执行如下命令创建一个叫做 1.0.0 的标签：
+
+	git tag 1.0.0 1b2e1d63ff
+	1b2e1d63ff 是你想要标记的提交 ID 的前 10 位字符。可以使用下列命令获取提交 ID：
+	git log
+	git log --graph
+	git tag --help
+	
+你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。  
 
 ------------
 
@@ -150,24 +181,6 @@ git checkout -- <filename>
 	git push -f 
 
 ------------
-
-
-### 6.解决冲突(git fetch + git merge)
-#### 1. 拉取
-默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。  
-注意：git fetch命令拉取回来的分支，并不会合并到HEAD中。
-
-	git fetch <远程主机名> <分支名>  
-eg. git fetch http://git.sankuai.com/scm/wm/waimai_service_bizauth_client.git master
-#### 2. 合并
-
-	git checkout develop
-	git merge FETCH_HEAD
-	
-	＃ 合并后，git diff 查看冲突的地方，修正，接下来提交
-	
-	git commit -am "update"
-	git push http://git.sankuai.com/scm/\~zhouhai02/waimai_service_bizauth_client.git HEAD
 
 
 ### 7. 查看历史提交

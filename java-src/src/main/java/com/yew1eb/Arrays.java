@@ -1,3 +1,5 @@
+package com.yew1eb;
+
 /**
  * 定义数组工具类
  */
