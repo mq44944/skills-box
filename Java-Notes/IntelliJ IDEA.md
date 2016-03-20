@@ -1,16 +1,18 @@
-IntelliJ IDEA 官网快捷键资料 Mac OS X: <https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf>  
-极客学院 Wiki IntelliJ IDEA 使用教程: <http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-mac-introduce.html>
 
 
-VM options
-参数的含义
-­vmargs ­Xms128M ­Xmx512M ­XX:PermSize=64M ­XX:MaxPermSize=128M ­vmargs 说明后面是VM的参数,所以后面的其实都是JVM的参数了
+#### VM options
+­Xms2048M 
+­Xmx5120M 
+­XX:PermSize=1024M 
+­XX:MaxPermSize=4096M 
+
+­vmargs 说明后面是VM的参数,所以后面的其实都是JVM的参数了
 ­Xms128m JVM初始分配的堆内存
 ­Xmx512m JVM最大允许分配的堆内存,按需分配
 ­XX:PermSize=64M JVM初始分配的非堆内存
 ­XX:MaxPermSize=128M JVM最大允许分配的非堆内存,按需分配
 
-####  一, Editing（编辑）
+#### Editing（编辑）
 
 ⌃Space 基本的代码补全（补全任何类、方法、变量）
 ⌃⇧Space 智能代码补全（过滤器方法列表和变量的预期类型）
@@ -51,3 +53,8 @@ VM options
 ⌘⇧+ 展开所以代码块
 ⌘⇧- 折叠所有代码块
 ⌘W 关闭活动的编辑器选项卡
+
+
+#### 参考资料
+* [IntelliJ IDEA 官网快捷键资料 Mac OS X](https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard_Mac.pdf)
+* [极客学院 Wiki IntelliJ IDEA 使用教程](http://wiki.jikexueyuan.com/project/intellij-idea-tutorial/keymap-mac-introduce.html)

@@ -6,16 +6,16 @@ Maven 除了以程序构建能力为特色之外，还提供高级项目管理�
 *********
 
 ### Maven常用命令
-1. 创建Maven的普通java项目： 
+1. 创建Maven的普通java项目：   
 
-	mvn archetype:create 
-   -DgroupId=packageName 
-   -DartifactId=projectName  
+    mvn archetype:create
+    -DgroupId=packageName 
+    -DartifactId=projectName  
    
 2. 创建Maven的Web项目：
  
     mvn archetype:create 
-    -DgroupId=packageName    
+    -DgroupId=packageName
     -DartifactId=webappName 
     -DarchetypeArtifactId=maven-archetype-webapp    
     
@@ -47,9 +47,6 @@ Maven 除了以程序构建能力为特色之外，还提供高级项目管理�
       ( -skipping 的灵活运用，当然也可以用于其他组合命令)  
 
 ********
-  
-一般使用情况是这样，首先通过git下载代码到本机，然后执行mvn idea:idea生成idea项目文件，然后导入到idea就行了。
-
 
 常用命令：  
 
@@ -90,14 +87,10 @@ Maven 除了以程序构建能力为特色之外，还提供高级项目管理�
 
 	mvn deploy:deploy-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar -DrepositoryId=maven-repository-inner -Durl=ftp://xxxxxxx/opt/maven/repository/ 	
 
-
-发布第三方Jar到本地库中： 
+发布第三方Jar到本地库中
 
 	mvn install:install-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar 
-	
-	
 	-DdownloadSources=true 
-	
 	-DdownloadJavadocs=true 
 
 
