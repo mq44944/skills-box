@@ -239,17 +239,20 @@ Overload顾名思义是重新加载，它可以表现类的多态性，可以是
 5. springMVC注解的意思
 
 
-6. spring中beanFactory和ApplicationContext的联系和区别
+6. spring中beanFactory和ApplicationContext的联系和区别   
+在Spring Ioc容器的代表就是org.springframework.beans包中的BeanFactory接口，BeanFactory接口提供了IoC容器最基本功能；而org.springframework.context包下的ApplicationContext接口扩展了BeanFactory，还提供了与Spring AOP集成、国际化处理、事件传播及提供不同层次的context实现 (如针对web应用的WebApplicationContext)。简单说， BeanFactory提供了IoC容器最基本功能，而 ApplicationContext 则增加了更多支持企业级功能支持。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。
 
-
-7. spring注入的几种方式
-
+7. spring注入的几种方式    
+Spring IoC容器注入依赖资源主要有以下两种基本实现方式：  
+     构造器注入：就是容器实例化Bean时注入那些依赖，通过在在Bean定义中指定构造器参数进行注入依赖，包括实例工厂方法参数注入依赖，但静态工厂方法参数不允许注入依赖；  
+     setter注入：通过setter方法进行注入依赖；  
+     方法注入：能通过配置方式替换掉Bean方法，也就是通过配置改变Bean方法 功能。
 
 8. spring如何实现事物管理的
 
 
-9. springIOC
-
+9. springIOC  
+<http://jinnianshilongnian.iteye.com/blog/1413846>
 
 10. spring AOP的原理
 

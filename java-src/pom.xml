@@ -49,5 +49,19 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
+    </dependency>
+
+    <!-- 中文简繁体转换-->
+    <dependency>
+      <groupId>com.luhuiguo</groupId>
+      <artifactId>chinese-utils</artifactId>
+      <version>1.0</version>
+    </dependency>
+
   </dependencies>
 </project>
