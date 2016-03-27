@@ -4,11 +4,53 @@
 
 **************
 
-### 一、Java基础  
+### 一、Java面向对象
+1. 类和对象
+2. 封装
+3. 继承
+4. 多态
 
+* 笔记：[1. java-OOP.md](/1.java-OOP.md)
+
+**************
+
+### 二、Java常见工具类
+#### 1. 异常与异常处理  
+* 笔记：[2.1 Java Exception.md](/2.1 Java Exception.md)
+
+#### 2. String类
 1. String类为什么是final的。  
 <https://www.zhihu.com/question/31345592>   
+2. string、stringbuilder、stringbuffer区别  
+String 类型和 StringBuffer 类型的主要性能区别其实在于 String 是不可变的对象  
+StringBuffer和StringBuilder底层都是 char[]数组实现的  
+StringBuffer是线程安全的，而StringBuilder是线程不安全的，但性能略高。
 
+#### 3. 基本类型的装箱和拆箱
+* 装箱：把基本类型转换成包装类，使其具有对象的性质，又可分为手动装箱和自动装箱  
+* 拆箱：和装箱相反，把包装类对象转换成基本类型的值，又可分为手动拆箱和自动拆箱
+Java 中基本类型和字符串之间的转换
+* 基本数据类型和字符串之间进行转换  
+
+		基本类型转换为字符串有三种方法：  
+			1. 使用包装类的 toString() 方法
+			2. 使用String类的 valueOf() 方法
+			3. 用一个空字符串加上基本类型，得到的就是基本类型数据对应的字符串    
+		字符串转换成基本类型有两种方法：  
+			1. 调用包装类的 parseXxx 静态方法  
+			2. 调用包装类的 valueOf() 方法转换为基本类型的包装类，会自动拆箱
+
+#### 4. 时间相关的类
+	java.text.SimpleDateFormat;  
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	调用format()方法，将日期转换为字符串并输出
+	调用parse()方法，将字符串转换为日期Date
+	java.util.Date;
+	Date 类的默认无参构造方法创建出的对象就代表当前时间
+
+**************
+
+### 三、 Java 中的集合框架
 2. HashMap的源码，实现原理，底层结构。
 
 3. 说说你知道的几个Java集合类：list、set、queue、map实现类。
@@ -16,12 +58,19 @@ ArrayList、LinkedList、Vector的区别：ArrayList 和Vector底层是采用数
 HashMap的底层源码实现：当我们往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标），如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。
 Fail-Fast机制:在使用迭代器的过程中有其他线程修改了map，那么将抛出ConcurrentModificationException，这就是所谓fail-fast机制。这一机制在源码中的实现是通过modCount域，modCount顾名思义就是修改次数，对HashMap内容的修改都将增加这个值，那么在迭代器初始化过程中会将这个值赋给迭代器的expectedModCount。在迭代过程中，判断modCount跟expectedModCount是否相等，如果不相等就表示已经有其他线程修改了Map.
 
-
 4. 描述一下ArrayList和LinkedList各自实现和区别Vector
-
 
 5. Java中的队列都有哪些，有什么区别。
 
+8. Java数组和链表两种结构的操作效率，在哪些情况下(从开头开始，从结尾开始，从中间开始)，哪些操作(插入，查找，删除)的效率高。
+		
+		
+11. hashtable和hashmap的区别
+HashTable比较老，是基于Dictionary 类实现的，HashTable 则是基于 Map接口实现的
+HashTable 是线程安全的， HashMap 则是线程不安全的
+HashMap可以让你将空值作为一个表的条目的key或value
+
+**************
 
 6. 反射的作用于原理 反射中，Class.forName和classloader的区别。java多态的实现原理
 抽象的来讲，多态的意思就是同一消息可以根据发送对象的不同而采用多种不同的行为方式。（发送消息就是函数调用）
@@ -31,28 +80,10 @@ Fail-Fast机制:在使用迭代器的过程中有其他线程修改了map，那�
 7. Java7、Java8的新特性
 
 
-8. Java数组和链表两种结构的操作效率，在哪些情况下(从开头开始，从结尾开始，从中间开始)，哪些操作(插入，查找，删除)的效率高。
 
 
 9. Java内存泄露的问题调查定位：jmap，jstack的使用等等。
 
-
-10. string、stringbuilder、stringbuffer区别
-String 类型和 StringBuffer 类型的主要性能区别其实在于 String 是不可变的对象
-StringBuffer和StringBuilder底层是 char[]数组实现的
-StringBuffer是线程安全的，而StringBuilder是线程不安全的
-
-
-11. hashtable和hashmap的区别
-HashTable比较老，是基于Dictionary 类实现的，HashTable 则是基于 Map接口实现的
-HashTable 是线程安全的， HashMap 则是线程不安全的
-HashMap可以让你将空值作为一个表的条目的key或value
-
-
-13. 异常的结构，运行时异常和非运行时异常，各举个例子。
-
-
-14. String 类的常用方法
 
 
 16. Java的四种引用，强弱软虚，用到的场景
@@ -81,7 +112,6 @@ sleep(milliseconds)需要指定一个睡眠时间，时间一到会自动唤醒
 JAVA 中堆和栈的区别，说下java 的内存机制
 
 
-18. java的基础类型和字节大小
 
 
 19. Hashtable,HashMap,ConcurrentHashMap底层实现原理与线程安全问题。

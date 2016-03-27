@@ -52,6 +52,10 @@
 创建一个叫做“feature_x”的分支，并切换过去：  
 	
 	git checkout -b feature_x  
+	
+这个命令检出一个基于 master 名为 marys-feature 的分支   
+
+	git checkout -b marys-feature master
 
 切换回主分支：  
 
