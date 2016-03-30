@@ -32,5 +32,9 @@ public class TestList {
         Object obj = 23;
         int x = Integer.parseInt(obj.toString());
         System.out.println(x);
+        List<Long> LL = new ArrayList<Long>();
+        LL.addAll(list);
+        LL.addAll(list);
+        System.out.println("LL.size() = "+LL.size());
     }
 }
