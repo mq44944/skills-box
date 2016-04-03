@@ -1,16 +1,17 @@
 
 
 #### VM options
-­Xms2048M 
-­Xmx5120M 
-­XX:PermSize=1024M 
-­XX:MaxPermSize=4096M 
+­Xms2048M   
+­Xmx5120M   
+-XX:PermSize=256M  
+-XX:MaxPermSize=2048m  
+  
 
-­vmargs 说明后面是VM的参数,所以后面的其实都是JVM的参数了
-­Xms128m JVM初始分配的堆内存
-­Xmx512m JVM最大允许分配的堆内存,按需分配
-­XX:PermSize=64M JVM初始分配的非堆内存
-­XX:MaxPermSize=128M JVM最大允许分配的非堆内存,按需分配
+­vmargs 说明后面是VM的参数,所以后面的其实都是JVM的参数了  
+­Xms128m JVM初始分配的堆内存  
+­Xmx512m JVM最大允许分配的堆内存,按需分配  
+­XX:PermSize=64M JVM初始分配的非堆内存  
+­XX:MaxPermSize=128M JVM最大允许分配的非堆内存,按需分配  
 
 #### Editing（编辑）
 

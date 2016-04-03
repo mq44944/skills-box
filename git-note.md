@@ -1,54 +1,28 @@
-创建本地仓库   
-
-	git init 
-
-添加到暂存区  
-
-	git add <filename>  
-	git add .
-
-添加评注
-
-	git commit -m "代码提交信息"
-	
 ![](http://7xi2wq.com1.z0.glb.clouddn.com/20160317142617.jpg)
 
-将你的仓库连接到某个远程服务器（新仓库，第一次push之前）
+暂存区操作
 
-	git remote add origin <server>
-
-将改动提交到远程仓库
-
-	git push origin master
-
-远程仓库相关命令
-
-	检出仓库 git clone git://github.com/jquery/jquery.git
-	查看远程仓库：$ git remote -v
-	添加远程仓库：$ git remote add [name] [url]
-	删除远程仓库：$ git remote rm [name]
-	修改远程仓库：$ git remote set-url --push [name] [newUrl]
-	拉取远程仓库：$ git pull [remoteName] [localBranchName]
-	推送远程仓库：$ git push [remoteName] [localBranchName]
+	git add <filename>  # 提交文件到暂存区
+	git add .
+	git commit -m "commit message" 
 	
-分支(branch)操作相关命令
+	git reset HEAD <filename> # 删除暂存区中的文件
 
-	查看本地分支：$ git branch
-	查看所有分支：$ git branch -a 
-	查看远程分支：$ git branch -r
-	创建本地分支：$ git branch [name] ----注意新分支创建后不会自动切换为当前分支
-	切换分支：$ git checkout [name]
-	创建新分支并立即切换到新分支：$ git checkout -b [name]
-	切换到远程dev分支：$ git checkout --track origin/dev
-	删除分支：$ git branch -d [name] ---- -d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。如果想强制删除一个分支，可以使用-D选项
-	合并分支：$ git merge [name] ----将名称为[name]的分支与当前分支合并
-	创建远程分支(本地分支push到远程)：$ git push origin [name]
-	删除远程分支：$ git push origin :heads/[name] 或 $ git push origin :[name] 
+推送到远程仓库
+
+	git remote add origin <server> 将你的仓库连接到某个远程服务器（新仓库，第一次push之前）
+	git push origin <branch>
+
 
 ------------
 
 ## 常用功能
 ### 1.分支操作
+查看分支：
+
+	git branch -a   #查看所有分支
+	git branch -vv  #查看本地分支
+	git branch -r   #查看远程分支
 创建一个叫做“feature_x”的分支，并切换过去：  
 	
 	git checkout -b feature_x  
@@ -61,36 +35,32 @@
 
 	git checkout master  
 	
-除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
+创建远程分支(本地新分支push到远程)：
 	
 	git push origin <branch>
-
-	git branch -vv
 	
-删除本地分支：  
-
-	git branch -d feature_x
+删除分支： 
+	
+	git branch -d <branch>
+	-d选项只能删除已经参与了合并的分支，对于未有合并的分支是无法删除的。
+	如果想强制删除一个分支，可以使用-D选项
 删除远程分支：
 
-	git push --delete origin [branch]
-删除原称跟踪分支：
-
-	git branch -d -r
-清理远程跟踪分支：
-
-	git fetch -p
-
+	git push --delete origin <branch>
+切换到远程dev分支：
+	
+	git checkout --track origin/dev
+	
 ### 2.更新与合并
 要更新你的本地仓库至最新改动，执行：  
 
-	git pull <remote> <branch>
-
-以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。
-要合并其他分支到你的当前分支（例如 master），执行：
-
-	git merge <branch>
-
-
+	git pull <remote> <branch> 
+	在你的工作目录中获取（fetch） 并合并（merge） 远端的改动。  
+	注：git pull 
+合并分支：
+	
+	git merge <branch>         #将<branch>分支与当前分支合并
+	git merge origin/<branch>  #将远程的<branch>分支雨当前分支合并
 间接合并方式：
 
 	git checkout test README.txt 【把test分支的文件 更新到当前分支上】
@@ -104,8 +74,7 @@
 在合并改动之前，你可以使用如下命令预览差异：
 
 	git diff <source_branch> <target_branch>
-
-
+	
 ### 6.解决冲突(git fetch + git merge)
 #### 1. 拉取
 默认情况下，git fetch取回所有分支(branch)的更新。如果只想取回特定分支的更新，可以指定分支名。  
