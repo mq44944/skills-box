@@ -59,6 +59,15 @@ HashMap的底层源码实现：当我们往HashMap中put元素的时候，先根
 Fail-Fast机制:在使用迭代器的过程中有其他线程修改了map，那么将抛出ConcurrentModificationException，这就是所谓fail-fast机制。这一机制在源码中的实现是通过modCount域，modCount顾名思义就是修改次数，对HashMap内容的修改都将增加这个值，那么在迭代器初始化过程中会将这个值赋给迭代器的expectedModCount。在迭代过程中，判断modCount跟expectedModCount是否相等，如果不相等就表示已经有其他线程修改了Map.
 
 4. 描述一下ArrayList和LinkedList各自实现和区别Vector
+ArrayList 与 Vector 底层都是使用了Object数组实现的，ArrayList是1.0出现的，是线程不安全的，效率高
+	Vector是JDK 1.5 出现的，是线程不安全的，效率低   
+	
+	ArrayList 底层是使用了Object数组实现的， 查询快  增删慢
+	LinkeList  底层是使用了链表数据实现的，  查询慢 增删快
+		
+	如果我们需要保留存储顺序的，并且保留重复元素的时候，使用List.
+	如果查询比较多，那么使用ArraysList 如果存取比较多，那么使用LiskedList
+	如果需要线程安全的，那么使用Vector
 
 5. Java中的队列都有哪些，有什么区别。
 
@@ -327,7 +336,15 @@ Spring IoC容器注入依赖资源主要有以下两种基本实现方式：
 
 18. volatile的理解
 
-19. 实现多线程有几种方式，多线程同步怎么做，说说几个线程里常用的方法。
+19. 实现多线程有几种方式，多线程同步怎么做，说说几个线程里常用的方法。  
+两大方法：继承 与 实现 
+ 	继承Thread 方法
+		自定义一个类继调用start承Thread,重写Thread的run 方法把自定义线程的任务
+代码放在run方法上。创建Thread类的子类对象，并且调用Start方法开启线程
+	实现 Runnable 接口
+自定义一个类实现Runnable接口，实现Runnable的run方法。把自定义线程的任务代码放在run方法上。创建Runnable实现类的对象。创建Thread的对象，然后把Runnable实现类的对象昨晚参数传递。调用Thread对象的sta线程rt方法开启
+
+synchronized,wait 与notify 都可以实现同步
 
 20.  ThreadLocal的设计理念与作用
 
