@@ -1,7 +1,7 @@
 [ourd3js - 【 持续更新 】D3 的学习资料](http://www.ourd3js.com/wordpress/?p=865)  
 [ourd3js - 【 持续更新 】本站学习目录汇总](http://www.ourd3js.com/wordpress/?p=2209)  
 [D3JS-API--中文手册](https://github.com/mbostock/d3/wiki/API--%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C)  
-
+[D3.js 入门教程](http://wiki.jikexueyuan.com/project/d3wiki/)  
 [常见可视化实例 - bl.ocks.org](https://bl.ocks.org/)
 
 常见树形图

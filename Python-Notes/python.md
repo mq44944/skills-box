@@ -1,4 +1,13 @@
 Python一些基础面试题目总结 http://mp.weixin.qq.com/s?__biz=MzA3MDg0MjgxNQ==&mid=207591081&idx=1&sn=19a2bf278dd112ff5025bc772d13ac8c#rd
+* [Django book 2.0](http://djangobook.py3k.cn/2.0/)
+* [Python 3 文档(简体中文) 3.2.2 documentation](http://docspy3zh.readthedocs.org/en/latest/)
+* [Python 中文学习大本营](http://www.pythondoc.com)
+* [深入 Python](http://woodpecker.org.cn/diveintopython/)
+* [深入 Python 3](http://woodpecker.org.cn/diveintopython3/)
+* [笨办法学 Python](http://old.sebug.net/paper/books/LearnPythonTheHardWay/)
+* [简明 Python 教程](http://woodpecker.org.cn/abyteofpython_cn/chinese/) (《A Byte of Python》中文版)
+* [以正确的方式开源 Python 项目](http://python.jobbole.com/84113/)
+
 
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->

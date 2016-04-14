@@ -1,5 +1,6 @@
 .DS_Store
 .idea
 skills-box.iml
+*/*.iml
 out
 */target

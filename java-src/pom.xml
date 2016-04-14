@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.yew1eb</groupId>
-  <artifactId>java-base</artifactId>
+  <artifactId>java-src</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>java-base</name>
+  <name>java-src</name>
 
   <repositories>
     <repository>

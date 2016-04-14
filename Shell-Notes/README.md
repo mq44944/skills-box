@@ -12,6 +12,7 @@
 * [The Linux Command Line](http://billie66.github.io/TLCL/index.html) (中英文版)
 * [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 * <http://wiki.jikexueyuan.com/list/linux/>
+* [鸟哥的 Linux 私房菜 基础学习篇](http://vbird.dic.ksu.edu.tw/linux_basic/linux_basic.php)
 
 ## 1. shell编程之变量
 1. BASH中变量类型默认为字符串型  

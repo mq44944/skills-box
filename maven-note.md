@@ -1,3 +1,5 @@
+ [Maven 教程| 极客学院 Wiki](http://wiki.jikexueyuan.com/project/maven/)  
+ 
 Maven是基于项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。
 Maven 除了以程序构建能力为特色之外，还提供高级项目管理工具。由于 Maven 的缺省构建规则有较高的可重用性，
 所以常常用两三行 Maven 构建脚本就可以构建简单的项目。由于 Maven 的面向项目的方法，
