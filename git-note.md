@@ -1,4 +1,4 @@
-![](http://7xi2wq.com1.z0.glb.clouddn.com/20160317142617.jpg)
+![](http://7xi2wq.com1.z0.glb.clouddn.com/0.jpeg)
 
 暂存区操作
 
@@ -6,6 +6,8 @@
 	git add .
 	git commit -m "commit message" 
 	
+	git diff HEAD -- <filename> # 命令可以查看工作区和版本库里面最新版本的区别
+	git commit -amend ＃追加到上一次提交
 	git reset HEAD <filename> # 删除暂存区中的文件
 
 推送到远程仓库
@@ -163,25 +165,25 @@ git checkout -- <filename>
 	显示某个文件的所有修改：$ git log -p <file>
 
 ### 8. 回滚
-放弃工作目录下的所有修改：
+放弃工作目录下的所有修改,回滚到：
 
-	$ git reset --hard HEAD
-	
+	git reset --hard HEAD   ＃当前版本
+	git reset --hard HEAD^  ＃上一个版本
+	git reset --hard HEAD^^ ＃上上一个版本
 将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
 
-	$ git reset --hard <commit>
-移除缓存区的所有文件（i.e. 撤销上次git add）:
+	git reset --hard <commit－SHA1>
 
-	$ git reset HEAD
+如误回滚，需撤销，则使用git reflog 查看操作日志，然后使用git reset回滚回去
+  
+	git reflog 
 放弃某个文件的所有本地修改：
 
 	$ git checkout HEAD <file>
 重置一个提交（通过创建一个截然不同的新提交）
 
 	$ git revert <commit>
-将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：
 
-	$ git reset <commit>
 将HEAD重置到上一次提交的版本，并保留未提交的本地修改：
 
 	$ git reset --keep <commit>
