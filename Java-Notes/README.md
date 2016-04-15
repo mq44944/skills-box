@@ -21,6 +21,7 @@
 * [Spring Framework 4.x参考文档](https://github.com/waylau/spring-framework-4-reference)
 * [用jersey构建REST服务](https://github.com/waylau/RestDemo)
 
+* [Java TCP/IP Socket 编程](http://wiki.jikexueyuan.com/project/java-socket/)
 * [Java 集合系列目录(Category)](http://www.cnblogs.com/skywang12345/p/3323085.html)
 * [Java多线程系列目录(共43篇)](http://www.cnblogs.com/skywang12345/p/java_threads_category.html)
 1. 对象的序列化与反序列化
