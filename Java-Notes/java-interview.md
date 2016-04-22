@@ -10,13 +10,13 @@
 3. 继承
 4. 多态
 
-* 笔记：[1. java-OOP.md](/1.java-OOP.md)
+* 笔记：1. java-OOP.md
 
 **************
 
 ### 二、Java常见工具类
 #### 1. 异常与异常处理  
-* 笔记：[2.1 Java Exception.md](/2.1 Java Exception.md)
+* 笔记：2.1 Java Exception.md
 
 #### 2. String类
 1. String类为什么是final的。  
@@ -85,10 +85,7 @@ HashMap可以让你将空值作为一个表的条目的key或value
 抽象的来讲，多态的意思就是同一消息可以根据发送对象的不同而采用多种不同的行为方式。（发送消息就是函数调用）
 实现的原理是动态绑定，程序调用的方法在运行期才动态绑定，追溯源码可以发现，JVM 通过参数的自动转型来找到合适的办法。
 
-
 7. Java7、Java8的新特性
-
-
 
 
 9. Java内存泄露的问题调查定位：jmap，jstack的使用等等。
@@ -119,8 +116,6 @@ sleep来自Thread类，和wait来自Object类
 sleep睡眠后不出让系统资源，wait让出系统资源其他线程可以占用CPU
 sleep(milliseconds)需要指定一个睡眠时间，时间一到会自动唤醒
 JAVA 中堆和栈的区别，说下java 的内存机制
-
-
 
 
 19. Hashtable,HashMap,ConcurrentHashMap底层实现原理与线程安全问题。
@@ -262,21 +257,15 @@ Overload顾名思义是重新加载，它可以表现类的多态性，可以是
 
 ### 五、开源框架
 
-
 1. hibernate和ibatis的区别
-
 
 2. 讲讲mybatis的连接池
 
-
 3. spring框架中需要引用哪些jar包，以及这些jar包的用途
-
 
 4. springMVC的原理
 
-
 5. springMVC注解的意思
-
 
 6. spring中beanFactory和ApplicationContext的联系和区别   
 在Spring Ioc容器的代表就是org.springframework.beans包中的BeanFactory接口，BeanFactory接口提供了IoC容器最基本功能；而org.springframework.context包下的ApplicationContext接口扩展了BeanFactory，还提供了与Spring AOP集成、国际化处理、事件传播及提供不同层次的context实现 (如针对web应用的WebApplicationContext)。简单说， BeanFactory提供了IoC容器最基本功能，而 ApplicationContext 则增加了更多支持企业级功能支持。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。
@@ -288,7 +277,6 @@ Spring IoC容器注入依赖资源主要有以下两种基本实现方式：
      方法注入：能通过配置方式替换掉Bean方法，也就是通过配置改变Bean方法 功能。
 
 8. spring如何实现事物管理的
-
 
 9. springIOC  
 <http://jinnianshilongnian.iteye.com/blog/1413846>

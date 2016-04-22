@@ -1,12 +1,21 @@
- [Maven 教程| 极客学院 Wiki](http://wiki.jikexueyuan.com/project/maven/)  
- 
-Maven是基于项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。
-Maven 除了以程序构建能力为特色之外，还提供高级项目管理工具。由于 Maven 的缺省构建规则有较高的可重用性，
-所以常常用两三行 Maven 构建脚本就可以构建简单的项目。由于 Maven 的面向项目的方法，
-许多 Apache Jakarta 项目发文时使用 Maven，而且公司项目采用 Maven 的比例在持续增长。
-
+Apache Maven 是一套软件工程管理和整合工具。基于工程对象模型（POM）的概念，通过一个中央信息管理模块，Maven 能够管理项目的构建、报告和文档。
 *********
 
+### 什么是构建生命周期
+构建生命周期是一组阶段的序列（sequence of phases），每个阶段定义了目标被执行的顺序。这里的阶段是生命周期的一部分。
+
+举例说明，一个典型的 Maven 构建生命周期是由以下几个阶段的序列组成的：
+   
+阶段	处理	描述   
+	
+	prepare-resources	资源拷贝	本阶段可以自定义需要拷贝的资源  
+	compile	编译	本阶段完成源代码编译  
+	package	打包	本阶段根据 pom.xml 中描述的打包配置创建 JAR / WAR 包  
+	install	安装	本阶段在本地 / 远程仓库中安装工程包  
+ 
+### Default (or Build) 生命周期
+这是 Maven 的主要生命周期，被用于构建应用。包括下面的 23 个阶段。
+![...](http://7xi2wq.com1.z0.glb.clouddn.com/maven_lifecycle.png)
 ### Maven常用命令
 1. 创建Maven的普通java项目：   
 
@@ -97,4 +106,5 @@ Maven 除了以程序构建能力为特色之外，还提供高级项目管理�
 
 
 
-
+### 参考资料
+* [Maven 教程| 极客学院 Wiki](http://wiki.jikexueyuan.com/project/maven/)  
