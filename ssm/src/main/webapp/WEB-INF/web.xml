@@ -1,22 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/applicationContext.xml</param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <filter>
+        <filter-name>parameterFilter</filter-name>
+        <filter-class>com.sankuai.filter.ParameterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>parameterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
-        <servlet-name>dispatcher</servlet-name>
+        <servlet-name>SpringMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.form</url-pattern>
+        <servlet-name>SpringMVC</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
+<!--
+ContextLoaderListener 的作用是加载spring的配置文件。
+它实现了ServletContextListener 接口，其中有两个方法:contextInitialized,contextDestroyed，作用是在web启动时和web销毁时调用它。
+它也继承了ContextLoader这个类，主要是负责加载配置信息。<context-param>说明了xml的路径。
+ParameterFilter的作用是过滤所有请求，打请求参数日志。
+ DispatcherServlet 的作用是对用户请求的资源进行处理，分发给不同的controller。
+ <param-value>指定了dispatcher的配置文件路径。
+ <servlet-mapping>指定了这个servlet需要拦截哪种类型的请求，url-pattern里可以具体写内容，这里的/代表拦截所有请求。
+ -->

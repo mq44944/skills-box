@@ -638,7 +638,7 @@
 						</connector>
 					</connectors>
 					<stopPort>9090</stopPort>
-					<stopKey>a</stopKey>
+					<stopKey>sk</stopKey>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
 						<contextPath>/</contextPath>

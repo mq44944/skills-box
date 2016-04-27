@@ -31,5 +31,6 @@
 非阻塞通信
 数据报通信
 
-
+* [聊聊同步、异步、阻塞与非阻塞](http://blog.jobbole.com/99765/)  
+* [聊聊 Linux 中的五种 IO 模型](http://blog.jobbole.com/99905/)
 

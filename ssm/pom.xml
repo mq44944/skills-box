@@ -9,93 +9,24 @@
   <name>ssm</name>
   <url>http://maven.apache.org</url>
 
-  <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/libs-milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <properties>
-    <!--架包版本变量 start-->
-    <spring.version>3.2.16.RELEASE</spring.version>
+    <spring.version>4.0.8.RELEASE</spring.version>
     <mybatis.version>3.3.1</mybatis.version>
     <mybatis-spring.version>1.2.4</mybatis-spring.version>
 
-    <!--springAOP需要用到-->
-    <aspectjweaver.version>1.7.2</aspectjweaver.version>
-    <persistence-api.version>1.0.2</persistence-api.version>
-
-    <junit.version>4.11</junit.version>
-    <mysql-connector.version>5.1.21</mysql-connector.version>
-    <druid.version>1.0.4</druid.version>
-
-    <slf4j.version>1.7.7</slf4j.version>
-    <log4j.version>1.2.17</log4j.version>
-
-    <javaee.api.version>7.0</javaee.api.version>
-    <jstl.version>1.2</jstl.version>
-
-    <commons-fileupload.version>1.3.1</commons-fileupload.version>
-    <commons-io.version>2.4</commons-io.version>
-    <commons-lang3.version>3.3.2</commons-lang3.version>
-    <commons-email.version>1.3.2</commons-email.version>
-    <commons-beanutils.version>1.9.2</commons-beanutils.version>
-
-    <httpclient.version>4.3.3</httpclient.version>
-    <!--架包版本变量 end-->
-
-    <!--插件版本变量 start-->
-    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
-    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-    <maven-war-plugin.version>2.1.1</maven-war-plugin.version>
-    <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-    <maven-install-plugin.version>2.4</maven-install-plugin.version>
-    <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
-    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
-    <maven-dependency-plugin.version>2.5.1</maven-dependency-plugin.version>
-    <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
-    <!--插件版本变量 end-->
-
-    <!--其他变量 start-->
-    <java-version>1.7</java-version>
-    <!--其他变量 end-->
-
-    <!--这个配置是为了解决下面两个警告-->
-    <!--Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!-->
-    <!--File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!-->
-    <!--指定Maven用什么编码来读取源码及文档-->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!--指定Maven用什么编码来呈现站点的HTML文件-->
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
   </properties>
 
 
   <dependencies>
-    <!-- ##### Spring 相关包 start ##### -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!--这个jar 文件包含Spring MVC 框架相关的所有类。包括框架的Servlets，Web MVC框架，控制器和视图支持。当然，如果你的应用使用了独立的MVC 框架，则无需这个JAR 文件里的任何类。 外部依赖spring-web-->
+    <!-- spring mvc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
@@ -104,229 +35,101 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-oxm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!--这个jar 文件包含支持UI模版（Velocity，FreeMarker，JasperReports），邮件服务，脚本服务(JRuby)，缓存Cache（EHCache），任务计划Scheduling（uartz）方面的类。 外部依赖spring-context-->
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- freemarker -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.20</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aspects</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!--下面两个提供对 AspectJ 的支持，是 spring-aspects 所需要依赖的-->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>${aspectjweaver.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.persistence</groupId>
-      <artifactId>persistence-api</artifactId>
-      <version>${persistence-api.version}</version>
-    </dependency>
-    <!-- ##### Spring 相关包 end ##### -->
-
-    <!-- MyBatis核心包 -->
+    <!-- mybatis -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
     </dependency>
 
-    <!-- mybatis/spring包 -->
-    <!--官网英文材料：http://www.mybatis.org/spring/-->
-    <!--官网中文资料：http://www.mybatis.org/spring/zh/index.html-->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
       <version>${mybatis-spring.version}</version>
     </dependency>
 
-    <!-- 导入Mysql数据库链接jar包 -->
+    <!-- aop -->
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>${mysql-connector.version}</version>
-      <scope>runtime</scope>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.8.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.6</version>
     </dependency>
 
+    <!-- JavaConfig need this library -->
     <dependency>
-      <!--这个组件具体可以看这里介绍:http://www.oschina.net/p/druid-->
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid</artifactId>
-      <version>${druid.version}</version>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.2.2</version>
     </dependency>
 
-    <!-- JSTL标签类 -->
+    <!-- log4j -->
     <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>${jstl.version}</version>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.4.1</version>
     </dependency>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jsp-api</artifactId>
-      <version>2.0</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- java ee jar 包 -->
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>7.0</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!--单元测试-->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- 日志文件管理包 start -->
-    <!--下面这三个是配套使用：http://blog.csdn.net/woshiwxw765/article/details/7624556-->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
+      <version>1.7.12</version>
+    </dependency>
+
+    <!-- c3p0数据源 -->
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.1</version>
     </dependency>
 
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${slf4j.version}</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
     </dependency>
-    <!-- 日志文件管理包 end -->
-
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.5</version>
-    </dependency>
-
-    <!-- 上传组件包 -->
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-      <version>${commons-fileupload.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>${commons-io.version}</version>
-    </dependency>
-
-
-    <!--apache工具包-->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>${commons-lang3.version}</version>
-    </dependency>
-
   </dependencies>
 
-
-  <!--设置项目编译级别等设置 start-->
   <build>
     <plugins>
-      <!-- Compiler 插件, 设定JDK版本 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
+        <version>3.1</version>
         <configuration>
-          <source>${java-version}</source>
-          <target>${java-version}</target>
+          <source>1.7</source>
+          <target>1.7</target>
           <encoding>UTF-8</encoding>
           <showWarnings>true</showWarnings>
         </configuration>
       </plugin>
 
-      <!-- war 打包插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>${maven-war-plugin.version}</version>
+        <version>2.4</version>
       </plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>install</id>
-            <phase>install</phase>
-            <goals>
-              <goal>sources</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!--tomcat7插件-->
-      <!--https://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/run-mojo.html-->
+      <!-- tomcat7 -->
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>${tomcat7-maven-plugin.version}</version>
+        <version>2.2</version>
         <configuration>
           <path>/</path>
           <port>8080</port>
@@ -338,8 +141,7 @@
         </configuration>
       </plugin>
 
-      <!--jetty插件-->
-      <!--http://www.eclipse.org/jetty/documentation/9.0.0.M3/jetty-maven-plugin.html-->
+      <!-- jetty -->
       <plugin>
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
@@ -347,64 +149,18 @@
         <configuration>
           <connectors>
             <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-              <port>9900</port>
+              <port>8080</port>
             </connector>
           </connectors>
           <stopPort>9090</stopPort>
           <stopKey>a</stopKey>
           <webApp>
-            <!--访问地址：http://localhost:8080/index.jsp-->
-            <!--如果不带index.jsp会直接报404，这个一直没找到原因-->
             <contextPath>/</contextPath>
           </webApp>
-          <!--scanIntervalSeconds 可选[秒]。在很短的时间间隔内在扫描web应用检查是否有改变，如果发觉有任何改变则自动热部署。
-          默认为0，表示禁用热部署检查。任何一个大于0的数字都将表示启用。-->
           <scanIntervalSeconds>10</scanIntervalSeconds>
         </configuration>
       </plugin>
 
-
-      <!-- resource插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>${maven-resources-plugin.version}</version>
-      </plugin>
-
-      <!-- source插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>${maven-source-plugin.version}</version>
-      </plugin>
-
-      <!-- install插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>${maven-install-plugin.version}</version>
-      </plugin>
-
-      <!-- clean插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>${maven-clean-plugin.version}</version>
-      </plugin>
-
-      <!-- ant插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>${maven-antrun-plugin.version}</version>
-      </plugin>
-
-      <!-- dependency插件 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>${maven-dependency-plugin.version}</version>
-      </plugin>
     </plugins>
   </build>
 

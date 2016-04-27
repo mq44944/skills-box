@@ -10,6 +10,7 @@ import java.net.InetAddress;
  * @createTime 16/4/6
  * @description
  */
+/*
 public class UDPSender {
 
     public static void main(String[] args ) throws IOException {
@@ -30,3 +31,6 @@ public class UDPSender {
         System.out.println("end UDPSender...");
     }
 }
+
+
+*/
