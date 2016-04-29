@@ -18,6 +18,7 @@ import java.util.Map;
 public class UserService {
     @Resource
     private UserMapper userMapper;
+
     public void insert(User user){
         userMapper.insert(user);
     }

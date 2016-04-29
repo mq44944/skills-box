@@ -38,11 +38,6 @@
     </servlet-mapping>
 </web-app>
 <!--
-ContextLoaderListener 的作用是加载spring的配置文件。
-它实现了ServletContextListener 接口，其中有两个方法:contextInitialized,contextDestroyed，作用是在web启动时和web销毁时调用它。
-它也继承了ContextLoader这个类，主要是负责加载配置信息。<context-param>说明了xml的路径。
-ParameterFilter的作用是过滤所有请求，打请求参数日志。
- DispatcherServlet 的作用是对用户请求的资源进行处理，分发给不同的controller。
- <param-value>指定了dispatcher的配置文件路径。
- <servlet-mapping>指定了这个servlet需要拦截哪种类型的请求，url-pattern里可以具体写内容，这里的/代表拦截所有请求。
+Web.xml详解
+http://blog.csdn.net/believejava/article/details/43229361
  -->

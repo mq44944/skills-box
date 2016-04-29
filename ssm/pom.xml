@@ -10,12 +10,12 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <spring.version>4.0.8.RELEASE</spring.version>
+    <spring.version>4.1.1.RELEASE</spring.version>
     <mybatis.version>3.3.1</mybatis.version>
     <mybatis-spring.version>1.2.4</mybatis-spring.version>
-
+    <freemarker.version>2.3.20</freemarker.version>
+    <jdbc.version>5.1.38</jdbc.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
   </properties>
 
 
@@ -33,9 +33,20 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- spring -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
@@ -43,7 +54,7 @@
     <dependency>
       <groupId>org.freemarker</groupId>
       <artifactId>freemarker</artifactId>
-      <version>2.3.20</version>
+      <version>${freemarker.version}</version>
     </dependency>
 
     <!-- mybatis -->
@@ -88,6 +99,13 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.12</version>
+    </dependency>
+
+    <!-- jdbc -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${jdbc.version}</version>
     </dependency>
 
     <!-- c3p0数据源 -->

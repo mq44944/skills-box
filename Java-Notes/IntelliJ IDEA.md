@@ -183,7 +183,7 @@
 	­Xmx5120M   
 	-XX:PermSize=256M  
 	-XX:MaxPermSize=2048m  
-
+IDEA VM options:  -Dvmargs:Xms2048M,Xmx5120m,-XX:PermSize=256M,-XX:MaxPermSize=2048m   
 ­vmargs 说明后面是VM的参数,所以后面的其实都是JVM的参数了  
 ­Xms2048m JVM初始分配的堆内存  
 ­Xmx5120m JVM最大允许分配的堆内存,按需分配  
