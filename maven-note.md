@@ -1,6 +1,15 @@
-Apache Maven 是一套软件工程管理和整合工具。基于工程对象模型（POM）的概念，通过一个中央信息管理模块，Maven 能够管理项目的构建、报告和文档。
+Apache Maven 是一个项目管理和构建自动化工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。
 *********
+ 
+Maven 遵循约定优于配置的概念，它给项目提供一系列的默认行为。它要求在没有定制之前，所有的项目都有如下的结构：  
 
+	${basedir}	存放 pom.xml和所有的子目录  
+	${basedir}/src/main/java	项目的 java源代码  
+	${basedir}/src/main/resources	项目的资源，比如说 property文件  
+	${basedir}/src/test/java	项目的测试类，比如说 JUnit代码  
+	${basedir}/src/test/resources	测试使用的资源  
+一个 Maven 项目在默认情况下会产生 JAR 文件，编译后 的 classes文件 会放在 ${basedir}/target/classes下面， JAR 文件会放在 ${basedir}/target下面。
+    
 ### 什么是构建生命周期
 构建生命周期是一组阶段的序列（sequence of phases），每个阶段定义了目标被执行的顺序。这里的阶段是生命周期的一部分。
 
@@ -17,52 +26,22 @@ Apache Maven 是一套软件工程管理和整合工具。基于工程对象模�
 这是 Maven 的主要生命周期，被用于构建应用。包括下面的 23 个阶段。
 ![...](http://7xi2wq.com1.z0.glb.clouddn.com/maven_lifecycle.png)
 ### Maven常用命令
-1. 创建Maven的普通java项目：   
-
+	创建Maven的普通java项目：   
     mvn archetype:create
     -DgroupId=packageName 
     -DartifactId=projectName  
    
-2. 创建Maven的Web项目：
- 
+	创建Maven的Web项目：
     mvn archetype:create 
     -DgroupId=packageName
     -DartifactId=webappName 
     -DarchetypeArtifactId=maven-archetype-webapp    
     
-3. 编译源代码： mvn compile 
-
-4. 编译测试代码：mvn test-compile    
-
-5. 运行测试：mvn test   
-
-6. 产生site：mvn site   
-
-7. 打包：mvn package   
-
-8. 在本地Repository中安装jar：mvn install 
-
-9. 清除产生的项目：mvn clean   
-
-10. 生成eclipse项目：mvn eclipse:eclipse  
-
-11. 生成idea项目：mvn idea:idea  
-
-12. 组合使用goal命令，如只打包不测试：mvn -Dtest package   
-
-13. 编译测试的内容：mvn test-compile  
-
-14. 只打jar包: mvn jar:jar  
-
-15. 只测试而不编译，也不测试编译：mvn test -skipping compile -skipping test-compile 
-      ( -skipping 的灵活运用，当然也可以用于其他组合命令)  
-
-********
-
-常用命令：  
-
+    自动创建项目：
+    mvn archetype:generate
+    
+    mvn jar:jar   打jar包
 	mvn install -Dmaven.test.skip=true 给任何目标添加maven.test.skip 属性就能跳过测试 
-	mvn jetty:run 调用 Jetty 插件的 Run 目标在 Jetty Servlet 容器中启动 web 应用 
 	mvn compile 编译你的项目 
 	mvn clean install 删除再编译 
 	mvn -version/-v  显示版本信息 
@@ -94,15 +73,6 @@ Apache Maven 是一套软件工程管理和整合工具。基于工程对象模�
 	        <url>http://public.planetmirror.com/pub/maven/</url>    
 	    </repository>  
 	</repositories> 
-
-
-	mvn deploy:deploy-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar -DrepositoryId=maven-repository-inner -Durl=ftp://xxxxxxx/opt/maven/repository/ 	
-
-发布第三方Jar到本地库中
-
-	mvn install:install-file -DgroupId=com -DartifactId=client -Dversion=0.1.0 -Dpackaging=jar -Dfile=d:\client-0.1.0.jar 
-	-DdownloadSources=true 
-	-DdownloadJavadocs=true 
 
 
 
