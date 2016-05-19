@@ -2,7 +2,8 @@
 
 暂存区操作
 
-	git add <filename>  # 提交文件到暂存区
+	git add <filename>   # 提交文件到暂存区
+	git reset <filename> # 把文件移除暂存区
 	git add .
 	git commit -m "commit message" 
 	
@@ -124,6 +125,17 @@ git checkout -- <filename>
 	
 你也可以使用少一点的提交 ID 前几位，只要它的指向具有唯一性。  
 
+新建标签
+	
+	git tag -a v1.4 -m 'my version 1.4' 
+	git tag
+	
+	git tag -a v1.2 <commit-SHA-1>
+	git show v1.2
+	
+分享标签   
+默认情况下,git push 并不会把标签传送到远端服务器上,只有通过显式命令才能分享标签到远端仓库。其命令格式如同推送分支,运行 git push origin [tagname] 即可:
+	
 ------------
 
 ### 5.使用git rebase合并多次commit
@@ -190,6 +202,28 @@ git checkout -- <filename>
 
 ------------
 
+### 9. 远程仓库
+添加远程仓库
+
+	git remote add [shortname] [url]:
+	git remote add pb git://github.com/paulboone/ticgit.git 
+	git remote -v
+
+查看远程仓库信息
+	
+	git remote show [remote-name]
+	git remote show origin 
+	
+远程仓库的删除和重命名
+	
+	git remote rename <old-name> <new-name> 
+	git remote
+	git remote rm <remote-name>
+	
+	
+### 10. 推送
+	
+	git push origin local-branch:remote-branch
 #### 参考资料
 * [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000) （本文由 [@廖雪峰](http://weibo.com/liaoxuefeng) 创作）
 * [Pro Git 官方中文文档](https://git-scm.com/book/zh/v2)
