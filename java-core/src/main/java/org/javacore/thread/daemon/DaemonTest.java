@@ -1,13 +1,12 @@
 package org.javacore.thread.daemon;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 /**
  * 1. 知道3个WriteTask线程休眠后,CleanerTask才执行
  * 2. 从结果中,可以看出队列维持在一定数量当中
  * Created by bysocket on 16/3/4.
- */
+
 public class DaemonTest {
     public static void main(String[] args) {
         Deque<Event> deque = new ArrayDeque<>();
@@ -21,3 +20,4 @@ public class DaemonTest {
         cleanerTask.start();
     }
 }
+ */

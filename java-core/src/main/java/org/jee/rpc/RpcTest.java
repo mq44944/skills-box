@@ -22,7 +22,7 @@ public class RpcTest {
         }).start();
 
         // 创建服务本地代理
-        RpcImporter<EchoService> importer = new RpcImporter<>();
+        RpcImporter<EchoService> importer = new RpcImporter<EchoService>();
 
         // 从服务本地代理获取服务对象类
         EchoService echo = importer.importer(EchoServiceImpl.class,new InetSocketAddress("localhost",8088));

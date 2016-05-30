@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * 反射对象分析工具 @{link test/org.javacore.reflection.ObjectAnalyzerTest}
  */
 public class ObjectAnalyzer {
-    private ArrayList<Object> visited = new ArrayList<>();
+    private ArrayList<Object> visited = new ArrayList<Object>();
 
     public String toString(Object obj){
         if (obj == null) return "null";
