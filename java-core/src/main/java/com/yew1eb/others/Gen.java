@@ -41,7 +41,7 @@ public class Gen {
         for (long i = 0; i < 5000000000L; i++) {
             //System.out.println(rand.next());
             long num = rand.next();
-            count.put(num, count.getOrDefault(num,0L) + 1);
+           // count.put(num, count.getOrDefault(num,0L) + 1);
         }
     }
 }
