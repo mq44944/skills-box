@@ -29,7 +29,7 @@ public class ThreadInfo {
             PrintWriter pw = new PrintWriter(fw);
 
             for (int i = 0; i <10 ;i++) {
-                pw.println("Main: Status of Thread " + i + " : "
+                pw.println("Main: Status of thread " + i + " : "
                         + threads[i].getState());
                 status[i] = threads[i].getState();
             }

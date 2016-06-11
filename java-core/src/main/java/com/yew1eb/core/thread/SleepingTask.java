@@ -33,7 +33,7 @@ public class SleepingTask extends LiftOff {
         while(countDown-- > 0){
             try {
                 System.out.println(status());
-                // 老版本调用：Thread.sleep(1000);
+                // 老版本调用：thread.sleep(1000);
                 TimeUnit.MICROSECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -10,7 +10,7 @@ public class DaemonTest {
         Deque<Event> deque = new ArrayDeque<>();
         WriterTask writerTask = new WriterTask(deque);
         for (int i = 0; i < 3 ; i++) {
-            Thread thread = new Thread(writerTask);
+            thread thread = new thread(writerTask);
             thread.start();
         }
 

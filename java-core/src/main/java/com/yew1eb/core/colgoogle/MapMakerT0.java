@@ -30,7 +30,7 @@ public class MapMakerT0 {
 
         try {
             // 4秒后，大于超时时间，缓存失效。
-            Thread.sleep(4000);
+            thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
