@@ -1,4 +1,4 @@
-package com.yew1eb.thread; /**
+package com.yew1eb.core.thread; /**
  * Created by yew1eb on 2016/1/22 0022.
  */
 /*

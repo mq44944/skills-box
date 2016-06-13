@@ -1,4 +1,4 @@
-package com.yew1eb.thread;
+package com.yew1eb.core.thread;
 
 import java.util.LinkedList;
 

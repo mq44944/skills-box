@@ -1,17 +1,17 @@
-package com.yew1eb.thread;
+package com.yew1eb.core.thread;
 
 /**
  * @author zhouhai
  * @createTime 16/4/4
  * @description
  */
-public class Demo1 {
+public class ThreadDemoForConAndPro {
     public static void main(String[] args) {
         Person p = new Person();
-        Producer pro = new Producer(p);
-        Consumer con = new Consumer(p);
-        Thread t1 = new Thread(pro, "生产者");
-        Thread t2 = new Thread(con, "消费者");
+        Producer producer = new Producer(p);
+        Consumer consumer = new Consumer(p);
+        Thread t1 = new Thread(producer, "生产者");
+        Thread t2 = new Thread(consumer, "消费者");
         t1.start();
         t2.start();
     }
@@ -34,7 +34,8 @@ class Person {
 class Producer implements Runnable {
     Person p;
 
-    public Producer() {}
+    public Producer() {
+    }
 
     public Producer(Person p) {
         this.p = p;
@@ -42,15 +43,15 @@ class Producer implements Runnable {
 
     public void run() {
         int i = 0;
-        while(true) {
+        while (true) {
             if (i % 2 == 0) {
-                p.set("jack","man");
+                p.set("jack", "man");
             } else {
-                p.set("alice","woman");
+                p.set("alice", "woman");
             }
             i++;
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -61,7 +62,8 @@ class Producer implements Runnable {
 class Consumer implements Runnable {
     Person p;
 
-    public Consumer() {}
+    public Consumer() {
+    }
 
     public Consumer(Person p) {
         this.p = p;
@@ -71,7 +73,7 @@ class Consumer implements Runnable {
         while (true) {
             p.read();
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

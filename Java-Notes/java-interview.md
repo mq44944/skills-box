@@ -23,7 +23,6 @@
 <https://www.zhihu.com/question/31345592>   
 2. string、stringbuilder、stringbuffer区别  
 String 类型和 StringBuffer 类型的主要性能区别其实在于 String 是不可变的对象  
-StringBuffer和StringBuilder底层都是 char[]数组实现的  
 StringBuffer是线程安全的，而StringBuilder是线程不安全的，但性能略高。
 
 #### 3. 基本类型的装箱和拆箱
@@ -54,26 +53,24 @@ Java 中基本类型和字符串之间的转换
 2. HashMap的源码，实现原理，底层结构。
 
 3. 说说你知道的几个Java集合类：list、set、queue、map实现类。
-ArrayList、LinkedList、Vector的区别：ArrayList 和Vector底层是采用数组方式存储数据，Vector由于使用了synchronized方法（线程安全）所以性能上比ArrayList要差，LinkedList使用双向链表实现存储，随机存取比较慢
-HashMap的底层源码实现：当我们往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标），如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。
-Fail-Fast机制:在使用迭代器的过程中有其他线程修改了map，那么将抛出ConcurrentModificationException，这就是所谓fail-fast机制。这一机制在源码中的实现是通过modCount域，modCount顾名思义就是修改次数，对HashMap内容的修改都将增加这个值，那么在迭代器初始化过程中会将这个值赋给迭代器的expectedModCount。在迭代过程中，判断modCount跟expectedModCount是否相等，如果不相等就表示已经有其他线程修改了Map.
+ArrayList、LinkedList、Vector的区别：ArrayList 和Vector底层是采用数组方式存储数据，Vector由于使用了synchronized方法（线程安全）所以性能上比ArrayList要差，
+LinkedList使用双向链表实现存储，随机存取比较慢
+HashMap的底层源码实现：当我们往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标），
+如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，
+就直接将该元素放到此数组中的该位置上。
+Fail-Fast机制:在使用迭代器的过程中有其他线程修改了map，那么将抛出ConcurrentModificationException，这就是所谓fail-fast机制。
+这一机制在源码中的实现是通过modCount域，modCount顾名思义就是修改次数，对HashMap内容的修改都将增加这个值，
+那么在迭代器初始化过程中会将这个值赋给迭代器的expectedModCount。在迭代过程中，判断modCount跟expectedModCount是否相等，如果不相等就表示已经有其他线程修改了Map.
 
 4. 描述一下ArrayList和LinkedList各自实现和区别Vector
-ArrayList 与 Vector 底层都是使用了Object数组实现的，ArrayList是1.0出现的，是线程不安全的，效率高
-	Vector是JDK 1.5 出现的，是线程不安全的，效率低   
-	
+    ArrayList 与 Vector 底层都是使用了Object数组实现的，ArrayList是1.0出现的，是线程不安全的，效率高
+	Vector是JDK 1.5 出现的，是线程安全的，效率低   
 	ArrayList 底层是使用了Object数组实现的， 查询快  增删慢
 	LinkeList  底层是使用了链表数据实现的，  查询慢 增删快
-		
 	如果我们需要保留存储顺序的，并且保留重复元素的时候，使用List.
 	如果查询比较多，那么使用ArraysList 如果存取比较多，那么使用LiskedList
 	如果需要线程安全的，那么使用Vector
 
-5. Java中的队列都有哪些，有什么区别。
-
-8. Java数组和链表两种结构的操作效率，在哪些情况下(从开头开始，从结尾开始，从中间开始)，哪些操作(插入，查找，删除)的效率高。
-		
-Java集合类框架的基本接口有哪些？
 
 Java集合类提供了一套设计良好的支持对一组对象进行操作的接口和类。Java集合类里面最基本的接口有：
 
@@ -81,21 +78,19 @@ Collection：代表一组对象，每一个对象都是它的子元素。
 Set：不包含重复元素的Collection。
 List：有顺序的collection，并且可以包含重复元素。
 Map：可以把键(key)映射到值(value)的对象，键不能重复。
-19.为什么集合类没有实现Cloneable和Serializable接口？
 
+19. 为什么集合类没有实现Cloneable和Serializable接口？
 集合类接口指定了一组叫做元素的对象。集合类接口的每一种具体的实现类都可以选择以它自己的方式对元素进行保存和排序。有的集合类允许重复的键，有些不允许。
+克隆(cloning)或者是序列化(serialization)的语义和含义是跟具体的实现相关的。因此，应该由集合类的具体实现来决定如何被克隆或者是序列化。
 
-20.什么是迭代器(Iterator)？
-
+20. 什么是迭代器(Iterator)？
 Iterator接口提供了很多对集合元素进行迭代的方法。每一个集合类都包含了可以返回迭代器实例的
 迭代方法。迭代器可以在迭代的过程中删除底层集合的元素。
 
-克隆(cloning)或者是序列化(serialization)的语义和含义是跟具体的实现相关的。因此，应该由集合类的具体实现来决定如何被克隆或者是序列化。
 
-21.Iterator和ListIterator的区别是什么？
+21. Iterator和ListIterator的区别是什么？
 
 下面列出了他们的区别：
-
 Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。
 Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。
 ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。
@@ -129,7 +124,8 @@ ArrayList是基于索引的数据接口，它的底层是数组。它可以以O(
 
 LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素。
 
-也可以参考ArrayList vs. LinkedList。
+
+* java-collection.md
 
 **************
 
@@ -174,10 +170,6 @@ Java接口中声明的变量默认都是final的。抽象类可以包含非final
 Java接口中的成员函数默认是public的。抽象类的成员函数可以是private，protected或者是public。
 接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。
 
-解析XML的几种方式的原理与特点：DOM、SAX、PULL
-DOM：消耗内存：先把xml文档都读到内存中，然后再用DOM API来访问树形结构，并获取数据。这个写起来很简单，但是很消耗内存。要是数据过大，手机不够牛逼，可能手机直接死机
-SAX：解析效率高，占用内存少，基于事件驱动的：更加简单地说就是对文档进行顺序扫描，当扫描到文档(document)开始与结束、元素(element)开始与结束、文档(document)结束等地方时通知事件处理函数，由事件处理函数做相应动作，然后继续同样的扫描，直至文档结束。
-SAX：与 SAX 类似，也是基于事件驱动，我们可以调用它的next（）方法，来获取下一个解析事件（就是开始文档，结束文档，开始标签，结束标签），当处于某个元素时可以调用XmlPullParser的getAttributte()方法来获取属性的值，也可调用它的nextText()获取本节点的值。
 wait()和sleep()的区别
 sleep来自Thread类，和wait来自Object类
 调用sleep()方法的过程中，线程不会释放对象锁。而 调用 wait 方法线程会释放对象锁
@@ -188,21 +180,7 @@ JAVA 中堆和栈的区别，说下java 的内存机制
 
 19. Hashtable,HashMap,ConcurrentHashMap底层实现原理与线程安全问题。
 
-
-20. 如果不让你用Java Jdk提供的工具，你自己实现一个Map，你怎么做。说了好久，说了HashMap源代码，如果我做，就会借鉴HashMap的原理，说了一通HashMap实现。
-
-
-21. Hash冲突怎么办？哪些解决散列冲突的方法？
-
-
-22. HashMap冲突很厉害，最差性能，你会怎么解决?从O（n）提升到log（n）。
-
-
 23. rehash
-
-
-24. hashCode() 与 equals() 生成算法、方法怎么重写。
-同样用于鉴定2个对象是否相等的，java集合中有 list 和 set 两类，其中 set不允许元素重复实现，那个这个不允许重复实现的方法，如果用 equal 去比较的话，如果存在1000个元素，你 new 一个新的元素出来，需要去调用1000次 equal 去逐个和他们比较是否是同一个对象，这样会大大降低效率。hashcode实际上是返回对象的存储地址，如果这个位置上没有元素，就把元素直接存储在上面，如果这个位置上已经存在元素，这个时候才去调用equal方法与新元素进行比较，相同的话就不存了，散列到其他地址上
 
 25. 泛型常用特点，List<String>能否转为List<Object>
 
@@ -231,7 +209,11 @@ Overload顾名思义是重新加载，它可以表现类的多态性，可以是
 
 
 2. 讲讲NIO
+NIO主要有三大核心部分：Channel(通道)，Buffer(缓冲区), Selector。传统IO基于字节流和字符流进行操作，而NIO基于Channel和Buffer(缓冲区)进行操作，数据总是从通道读取到缓冲区中，或者从缓冲区写入到通道中。Selector(选择区)用于监听多个通道的事件（比如：连接打开，数据到达）。因此，单个线程可以监听多个数据通道。
 
+NIO和传统IO（一下简称IO）之间第一个最大的区别是，IO是面向流的，NIO是面向缓冲区的。 Java IO面向流意味着每次从流中读一个或多个字节，直至读取所有字节，它们没有被缓存在任何地方。此外，它不能前后移动流中的数据。如果需要前后移动从流中读取的数据，需要先将它缓存到一个缓冲区。NIO的缓冲导向方法略有不同。数据读取到一个它稍后处理的缓冲区，需要时可在缓冲区中前后移动。这就增加了处理过程中的灵活性。但是，还需要检查是否该缓冲区中包含所有您需要处理的数据。而且，需确保当更多的数据读入缓冲区时，不要覆盖缓冲区里尚未处理的数据。
+
+IO的各种流是阻塞的。这意味着，当一个线程调用read() 或 write()时，该线程被阻塞，直到有一些数据被读取，或数据完全写入。该线程在此期间不能再干任何事情了。 NIO的非阻塞模式，使一个线程从某通道发送请求读取数据，但是它仅能得到目前可用的数据，如果目前没有数据可用时，就什么都不会获取。而不是保持线程阻塞，所以直至数据变的可以读取之前，该线程可以继续做其他的事情。 非阻塞写也是如此。一个线程请求写入一些数据到某通道，但不需要等待它完全写入，这个线程同时可以去做别的事情。 线程通常将非阻塞IO的空闲时间用于在其它通道上执行IO操作，所以一个单独的线程现在可以管理多个输入和输出通道（channel）。
 
 3. String 编码UTF-8 和GBK的区别？
 
@@ -240,29 +222,6 @@ Overload顾名思义是重新加载，它可以表现类的多态性，可以是
 
 
 5. 递归读取文件夹下的文件，代码怎么实现？
-
-
-**********
-
-### 三、Java Web
-
-
-1. session和cookie的区别和联系，session的生命周期，多个服务部署时session管理。
-
-
-2. servlet的一些相关问题
-
-
-3. webservice相关问题
-
-
-4. jdbc连接，forname方式的步骤，怎么声明使用一个事务。
-
-
-5. 无框架下配置web.xml的主要配置内容
-
-
-6. jsp和servlet的区别
 
 
 **********
@@ -320,43 +279,14 @@ Overload顾名思义是重新加载，它可以表现类的多态性，可以是
 复制回收法：把现有内存空间分成两部分，gc运行时，它把可到达对象复制到另一半空间，再清空正在使用的空间的全部对象。这种方法适用于短生存期的对象，持续复制长生存期的对象则导致效率降低。 
 
 分代回收发：把内存空间分为两个或者多个域，如年轻代和老年代，年轻代的特点是对象会很快被回收，因此在年轻代使用效率比较高的算法。当一个对象经过几次回收后依然存活，对象就会被放入称为老年的内存空间，老年代则采取标记-压缩算法
-    
-**********
-
-### 五、开源框架
-
-1. hibernate和ibatis的区别
-
-2. 讲讲mybatis的连接池
-
-3. spring框架中需要引用哪些jar包，以及这些jar包的用途
-
-4. springMVC的原理
-
-5. springMVC注解的意思
-
-6. spring中beanFactory和ApplicationContext的联系和区别   
-在Spring Ioc容器的代表就是org.springframework.beans包中的BeanFactory接口，BeanFactory接口提供了IoC容器最基本功能；而org.springframework.context包下的ApplicationContext接口扩展了BeanFactory，还提供了与Spring AOP集成、国际化处理、事件传播及提供不同层次的context实现 (如针对web应用的WebApplicationContext)。简单说， BeanFactory提供了IoC容器最基本功能，而 ApplicationContext 则增加了更多支持企业级功能支持。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。
-
-7. spring注入的几种方式    
-Spring IoC容器注入依赖资源主要有以下两种基本实现方式：  
-     构造器注入：就是容器实例化Bean时注入那些依赖，通过在在Bean定义中指定构造器参数进行注入依赖，包括实例工厂方法参数注入依赖，但静态工厂方法参数不允许注入依赖；  
-     setter注入：通过setter方法进行注入依赖；  
-     方法注入：能通过配置方式替换掉Bean方法，也就是通过配置改变Bean方法 功能。
-
-8. spring如何实现事物管理的
-
-9. springIOC  
-<http://jinnianshilongnian.iteye.com/blog/1413846>
-
-10. spring AOP的原理
 
 **********
 
 ### 六、多线程
 
 1. Java创建线程之后，直接调用start()方法和run()的区别
-启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。
+启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。
+run()方法可以产生必须退出的标志来停止一个线程。
 
 2. 常用的线程池模式以及不同线程池的使用场景
 
@@ -413,7 +343,57 @@ I/O阻塞(Blocked on I/O)：等待I/O操作完成。
 synchronized,wait 与notify 都可以实现同步
 
 20.  ThreadLocal的设计理念与作用
+**********
 
+### 三、Java Web
+
+
+1. session和cookie的区别和联系，session的生命周期，多个服务部署时session管理。
+
+
+2. servlet的一些相关问题
+
+
+3. webservice相关问题
+
+
+4. jdbc连接，forname方式的步骤，怎么声明使用一个事务。
+
+
+5. 无框架下配置web.xml的主要配置内容
+
+
+6. jsp和servlet的区别
+
+**********
+
+### 开源框架
+
+1. hibernate和ibatis的区别
+
+2. 讲讲mybatis的连接池
+
+3. spring框架中需要引用哪些jar包，以及这些jar包的用途
+
+4. springMVC的原理
+
+5. springMVC注解的意思
+
+6. spring中beanFactory和ApplicationContext的联系和区别   
+在Spring Ioc容器的代表就是org.springframework.beans包中的BeanFactory接口，BeanFactory接口提供了IoC容器最基本功能；而org.springframework.context包下的ApplicationContext接口扩展了BeanFactory，还提供了与Spring AOP集成、国际化处理、事件传播及提供不同层次的context实现 (如针对web应用的WebApplicationContext)。简单说， BeanFactory提供了IoC容器最基本功能，而 ApplicationContext 则增加了更多支持企业级功能支持。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。
+
+7. spring注入的几种方式    
+Spring IoC容器注入依赖资源主要有以下两种基本实现方式：  
+     构造器注入：就是容器实例化Bean时注入那些依赖，通过在在Bean定义中指定构造器参数进行注入依赖，包括实例工厂方法参数注入依赖，但静态工厂方法参数不允许注入依赖；  
+     setter注入：通过setter方法进行注入依赖；  
+     方法注入：能通过配置方式替换掉Bean方法，也就是通过配置改变Bean方法 功能。
+
+8. spring如何实现事物管理的
+
+9. springIOC  
+<http://jinnianshilongnian.iteye.com/blog/1413846>
+
+10. spring AOP的原理
 **********
 
 ### 七、网络通信
@@ -490,49 +470,24 @@ synchronized,wait 与notify 都可以实现同步
 4. 生产者消费者模式
 
 **********
-
 ### 十一、并发与性能调优
-
 
 1. 有个每秒钟5k个请求，查询手机号所属地的笔试题，如何设计算法?请求再多，比如5w，如何设计整个系统?
 
-
 2. 高并发情况下，我们系统是如何支撑大量的请求的
-
 
 3. 集群如何同步会话状态
 
-
 4. 负载均衡的原理
+负载均衡是由多台服务器以对称的方式组成一个服务器集合，每台服务器都
+具有等价的地位，都可以单独对外提供服务而无须其他服务器的辅助。通过某
+种负载分担技术，将外部发送来的请求均匀分配到对称结构中的某一台服务器
+上，而接收到请求的服务器独立地回应客户的请求。
 
+5. 如果有一个特别大的访问量，到数据库上，怎么做优化（DB设计(分库,分表)，DBIO，SQL优化，Java优化）
 
-5. 如果有一个特别大的访问量，到数据库上，怎么做优化（DB设计，DBIO，SQL优化，Java优化）
-
-
-6. 如果出现大面积并发，在不增加服务器的基础上，如何解决服务器响应不及时问题“。
-
+6. 如果出现大面积并发，在不增加服务器的基础上，如何解决服务器响应不及时问题。
 
 7. 假如你的项目出现性能瓶颈了，你觉得可能会是哪些方面，怎么解决问题。
 
-
 8. 如何查找 造成 性能瓶颈出现的位置，是哪个位置照成性能瓶颈。
-
-
-9. 你的项目中使用过缓存机制吗？有没用用户非本地缓存
-
-*********
-
-### 十二、其他
-
-1. 常用的linux下的命令
-
-2. Java与C++对比 
-
-*********
-
-### 十三、推荐书籍   
-	《java核心技术卷I》  
-	《Thinking in java》 
-	《java并发编程》
-	《effictive java》
-	《大话设计模式》

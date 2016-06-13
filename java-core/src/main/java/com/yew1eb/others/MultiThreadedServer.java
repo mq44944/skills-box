@@ -1,7 +1,7 @@
 package com.yew1eb.others; /**
  * Created by yew1eb on 2016/1/22 0022.
  */
-import com.yew1eb.thread.WorkerRunnable;
+import com.yew1eb.core.thread.WorkerRunnable;
 
 import java.net.ServerSocket;
 import java.net.Socket;
