@@ -117,33 +117,33 @@ public class Client {
 
 下面用一个实例讲解一下JDK中动态代理的用法：
 
-```java
-public class dynamicProxy implements InvocationHandler {
-
-    private RealSubject = null;
-
-    public Object invoke(Object proxy, Method method, Object[] args){
-        if(RealSubject == null) {
-            RealSubject = new RealSubject();
+    ```java
+    public class dynamicProxy implements InvocationHandler {
+    
+        private RealSubject = null;
+    
+        public Object invoke(Object proxy, Method method, Object[] args){
+            if(RealSubject == null) {
+                RealSubject = new RealSubject();
+            }
+            method.invoke(RealSubject, args);
+            return RealSubject;
         }
-        method.invoke(RealSubject, args);
-        return RealSubject;
+    
     }
-
-}
 ```
 
 客户端代码实例
 
-```java
-public class Client {
-    public static void main(Strings[] args) {
-        Subject subject = (Subject)Proxy.newInstance(ClassLoader.getSystemLoader(), RealSubject.class.getInterfaces(), new DynamicProxy());
-        Subject.sayHello();
-        Subject.sayGoodBye();
+    ```java
+    public class Client {
+        public static void main(Strings[] args) {
+            Subject subject = (Subject)Proxy.newInstance(ClassLoader.getSystemLoader(), RealSubject.class.getInterfaces(), new DynamicProxy());
+            Subject.sayHello();
+            Subject.sayGoodBye();
+        }
     }
-}
-```
+    ```
 
 从上面的代码可以看出，要利用JDK中的动态代理。利用静态方法`Proxy.newInstance(ClassLoader, Interfaces[], InvokeHandler)`可以创建一个动态代理类。 `newInstance`方法有三个参数，分别表示**类加载器**，**一个希望该代理类实现的接口列表**，以及**实现`InvokeHandler`接口的实例**。 动态代理将每个方法的执行过程则交给了Invoke方法处理。
 

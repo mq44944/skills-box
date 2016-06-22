@@ -1,8 +1,5 @@
 package com.yew1eb.mutiplthread;
 
-/**
- * Created by fuyishan on 16/4/26.
- */
 public class DeadLockDemo {
 
     public static void main(String[] args) {
