@@ -25,7 +25,6 @@ public class MethodDemo{
 			Object retobj= method.invoke(methodobj, 1,2); 
 			Integer retval = (Integer)retobj; 
 			System.out.println(retval.intValue()); 
-			
 			/*
 			Class<?> c = Class.forName("java.lang.reflect.Method"); 
 	        //Method[] m = c.getDeclaredMethods(); 

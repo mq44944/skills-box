@@ -1,0 +1,24 @@
+2016-06-27 20:18:06,464 INFO  (PrintwthLog4j.java:40) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:18:06,473 WARN  (PrintwthLog4j.java:41) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:18:06,473 ERROR (PrintwthLog4j.java:42) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+
+
+2016-06-27 20:18:08,480 INFO  (PrintwthLog4j.java:40) - i = 2, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:18:08,480 WARN  (PrintwthLog4j.java:41) - i = 2, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:18:08,481 ERROR (PrintwthLog4j.java:42) - i = 2, logger-name = com.yew1eb.log.PrintwthLog4j
+
+
+2016-06-27 20:18:10,485 WARN  (PrintwthLog4j.java:41) - i = 3, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:18:10,486 ERROR (PrintwthLog4j.java:42) - i = 3, logger-name = com.yew1eb.log.PrintwthLog4j
+
+
+2016-06-27 20:20:20,018 INFO  (PrintwthLog4j.java:33) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:20:20,026 WARN  (PrintwthLog4j.java:34) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:20:20,026 ERROR (PrintwthLog4j.java:35) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+
+
+2016-06-27 20:20:25,557 INFO  (PrintwthLog4j.java:33) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:20:25,560 WARN  (PrintwthLog4j.java:34) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+2016-06-27 20:20:25,560 ERROR (PrintwthLog4j.java:35) - i = 1, logger-name = com.yew1eb.log.PrintwthLog4j
+
+
