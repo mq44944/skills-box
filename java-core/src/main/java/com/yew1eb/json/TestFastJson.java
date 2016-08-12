@@ -1,12 +1,7 @@
 package com.yew1eb.json;
 
 import com.alibaba.fastjson.JSON;
-
-import java.awt.print.Book;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author zhouhai
@@ -15,9 +10,10 @@ import java.util.Map;
  */
 public class TestFastJson {
 
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         //testUserGroup();
-        testInvokerBean();
+        //testInvokerBean();
+        JSONObject jsonObject = JSON.parseObject("{dsfa}");
     }
 
     public static void testInvokerBean() {
