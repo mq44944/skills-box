@@ -13,7 +13,8 @@ public class TestFastJson {
     public static void main(String[] args) {
         //testUserGroup();
         //testInvokerBean();
-        JSONObject jsonObject = JSON.parseObject("{dsfa}");
+        JSONObject jsonObject = JSON.parseObject("");
+        System.out.println(jsonObject.getString("data"));
     }
 
     public static void testInvokerBean() {

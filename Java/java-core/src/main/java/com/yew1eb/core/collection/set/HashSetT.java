@@ -36,5 +36,7 @@ public class HashSetT{
 		// 注意排序
 		System.out.println("HashSet Elements:");
 		System.out.print("\t" + h1 + "\n");
+		Set<String> st = new HashSet<>(null);
+
 	}
 }

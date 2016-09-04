@@ -1,18 +1,99 @@
 package com.yew1eb.core.collection.map;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.*;
 
 public class TreeMapT {
 
+    public static void sortByValue() {
+        Map<String,Integer> map = new HashMap<String,Integer>();
+        map.put("a", 1);
+        map.put("d", 1);
+        map.put("b", 3);
+        map.put("c", 2);
+
+        for (Map.Entry<String, Integer> e: map.entrySet()) {
+            System.out.println(e.getKey()+":"+e.getValue());
+        }
+        List<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
+
+        Collections.sort(list,new Comparator<Map.Entry<String,Integer>>() {
+            //升序排序
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+
+        for (Map.Entry<String, Integer> e: list) {
+            System.out.println(e.getKey()+":"+e.getValue());
+        }
+    }
     public static void main(String[] args) {
         // 测试常用的API
-        testTreeMapOridinaryAPIs();
+        //testTreeMapOridinaryAPIs();
 
         // 测试TreeMap的导航函数
         //testNavigableMapAPIs();
 
         // 测试TreeMap的子Map函数
         //testSubMapAPIs();
+        sortByValue();
+
+        List<String> list = new ArrayList<>();
+        list.add("com.sankuai.meituan#WARN");
+        list.add("com.sankuai.meituan#WARN");
+        list.add("com.sankuai.meituan#WARN");
+        list.add("com.sankuai.meituan#INFO");
+        list.add("com.sankuai.meituan#DEBUG");
+        list.add("com.sankuai.meituan#DEBUG");
+        list.add("com.sankuai.meituan#OFF");
+        list.add("com.sankuai.meituan#OFF");
+        list.add("com.sankuai.meituan#OFF");
+        list.add("com.sankuai.meituan#OFF");
+        list.add("com.sankuai#INFO");
+
+
+        Map<String, Integer> countMap = new TreeMap<>();
+        for (String s : list) {
+            String key = s;
+            Integer value = countMap.get(key);
+            if (value == null) {
+                countMap.put(key, 1);
+            } else {
+                countMap.put(key, value + 1);
+            }
+            //System.out.println(key);
+        }
+
+
+        List<Map.Entry<String, Integer>> arrayList = new ArrayList<>(countMap.entrySet());
+        Collections.sort(arrayList,new Comparator<Map.Entry<String,Integer>>() {
+            //按value降序排序
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+
+        for (Map.Entry<String, Integer> e: arrayList) {
+            System.out.println(e.getKey()+":"+e.getValue());
+        }
+
+        Set<String> nameSet = new HashSet<>();
+        JSONArray loggers = new JSONArray();
+        for (Map.Entry<String, Integer> entry : arrayList) {
+            String key = entry.getKey();
+            String[] logger = key.split("#");
+            if (!nameSet.contains(logger[0])) {
+                nameSet.add(logger[0]);
+                JSONObject loggerJSON = new JSONObject();
+                loggerJSON.put("loggerName", logger[0]);
+                loggerJSON.put("logLevel", logger[1]);
+                loggers.add(loggerJSON);
+            }
+        }
+        System.out.println(loggers);
     }
 
     /**
