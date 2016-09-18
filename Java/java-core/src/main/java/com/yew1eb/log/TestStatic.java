@@ -19,9 +19,10 @@ public class TestStatic {
     }
 
     public static void main(String[] args) {
-        System.out.println(TestStatic.a1+":"+TestStatic.a2);
+        System.out.println(TestStatic.a1 + ":" + TestStatic.a2);
         LOGGER.info("test");
         Logger logger = Logger.getLogger(TestStatic.class);
         System.out.println(logger.getClass().getName());
     }
-}
+    }
+
