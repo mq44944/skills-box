@@ -57,14 +57,6 @@ My technology stack, Keep going!
 * [学习CSS布局](http://zh.learnlayout.com)
 * [通用 CSS 笔记、建议与指导](https://github.com/chadluo/CSS-Guidelines/blob/master/README.md)
 
-### PHP
-* [PHP 之道](http://wulijun.github.io/php-the-right-way/)
-* [PHP5中文手册](http://php.net/manual/zh/)
-* [PHP扩展开发及内核应用](http://www.walu.cc/phpbook/preface.md)
-* [Symfony2 实例教程](https://wusuopu.gitbooks.io/symfony2_tutorial/content)
-* [深入理解 PHP 内核](http://www.php-internals.com/book/)
-
-
 ### 资源网站
 * [Jobbole伯乐在线](http://www.jobbole.com/)   
 * [17bigdata](http://www.17bigdata.com/)  

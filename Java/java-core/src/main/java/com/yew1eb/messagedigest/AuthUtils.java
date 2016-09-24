@@ -12,11 +12,5 @@ public class AuthUtils {
      */
     public static final String HMAC_SHA1 = "HmacSHA1";
 
-    public static String getSignature() {
-
-    }
-
-    public static String getDigest(String data, String key) {
-
-    }
 }
+
