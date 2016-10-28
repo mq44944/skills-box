@@ -6,14 +6,13 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 public class ArraysT {
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         String str = "hostName";
 
         long start = System.currentTimeMillis();
@@ -34,19 +33,14 @@ public class ArraysT {
 
         Object x = JSON.toJSONString(list);
         System.out.println(x);
-        try {
 
-            String dateFromStr = "2016-10-10 00:00:00";
-            Date dateFrom = dateFormat.parse(dateFromStr);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(dateFrom);
-            calendar.add(Calendar.DAY_OF_MONTH, 1);//加一天
-            Date dateTo = calendar.getTime();
-            System.out.println(dateFormat.format(dateFrom));
-            System.out.println(dateFormat.format(dateTo));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
+        Date d1 = dateFormat.parse("2013-10-22 05:12:10");
+        Date d2 = dateFormat.parse("2013-10-23 08:10:10");
+        long xiaoshi = (((d2.getTime() - d1.getTime()) / 1000) / 60);
+        System.out.println("已累计在线：" + xiaoshi + "mins");
+        System.out.println(d1.getTime());
+        long d1min = (Integer.MAX_VALUE/2) / 1000 / 60;
+        System.out.println(dateFormat.format(new Date(d1min*1000*60)));
     }
 }
