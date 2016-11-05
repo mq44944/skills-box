@@ -1,7 +1,7 @@
 package com.yew1eb.others; /**
  * Created by yew1eb on 2016/1/22 0022.
  */
-import com.yew1eb.concurrency.thread.ThreadPool;
+import com.yew1eb.concurrency.mutiplthread.ThreadPool;
 
 import java.io.*;
 import java.net.*;

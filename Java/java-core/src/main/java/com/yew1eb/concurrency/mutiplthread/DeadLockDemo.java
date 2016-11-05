@@ -1,23 +1,28 @@
 package com.yew1eb.concurrency.mutiplthread;
 
 /**
- * Created by fuyishan on 16/4/26.
+ * 死锁
  */
 public class DeadLockDemo {
 
-    public static void main(String[] args) {
-        final Object a = new Object();
-        final Object b = new Object();
-        Thread t1 = new Thread() {
-                    @Override
-                    public void run() {
-                        synchronized (a) {
-                                System.out.println("read:a" + Thread.currentThread().getName());
+    final Object a = new Object();
+    final Object b = new Object();
 
-                        }
-                        synchronized (b) {
-                            System.out.println("read:b");
-                        }
+    public static void main(String[] args) {
+        new DeadLockDemo().deadLock();
+    }
+
+    private void deadLock() {
+        Thread t1 = new Thread() {
+            @Override
+            public void run() {
+                synchronized (a) {
+                    System.out.println("read:a" + Thread.currentThread().getName());
+
+                }
+                synchronized (b) {
+                    System.out.println("read:b");
+                }
             }
         };
 
@@ -25,7 +30,7 @@ public class DeadLockDemo {
             @Override
             public void run() {
                 synchronized (b) {
-                    System.out.println("read:b"+Thread.currentThread().getName());
+                    System.out.println("read:b" + Thread.currentThread().getName());
                 }
                 synchronized (a) {
                     System.out.println("read:a");
