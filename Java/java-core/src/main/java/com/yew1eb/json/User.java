@@ -5,7 +5,7 @@ package com.yew1eb.json;
  * @createTime 16/6/28
  * @description
  */
-class User {
+public class User {
     private String name;
     private int age;
 

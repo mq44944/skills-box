@@ -8,7 +8,7 @@ import java.util.List;
  * @createTime 16/6/28
  * @description
  */
-class UserGroup {
+public class UserGroup {
     private String name;
     private List<User> users = new ArrayList<User>();
 
