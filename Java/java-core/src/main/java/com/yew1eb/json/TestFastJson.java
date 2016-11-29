@@ -2,6 +2,7 @@ package com.yew1eb.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
  * @author zhouhai
@@ -11,10 +12,21 @@ import com.alibaba.fastjson.JSONObject;
 public class TestFastJson {
 
     public static void main(String[] args) {
+        JSONObject data = new JSONObject();
+        String xx = null;
+        Long xlong = null;
+        data.put("a", null);
+        data.put("b", "xxx");
+        data.put("c", xx);
+        data.put("d", xlong);
+        System.out.println(JSONObject.toJSONString(data,
+                SerializerFeature.WriteNullNumberAsZero,
+                SerializerFeature.WriteNullStringAsEmpty,
+                SerializerFeature.WriteMapNullValue,
+                SerializerFeature.PrettyFormat));
         //testUserGroup();
         //testInvokerBean();
-        JSONObject jsonObject = JSON.parseObject("");
-        System.out.println(jsonObject.getString("data"));
+
     }
 
     public static void testInvokerBean() {

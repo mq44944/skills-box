@@ -8,5 +8,7 @@ public class HashTableT {
 
     public void main(String[] args) {
         Hashtable<String, Integer> htable = new Hashtable<String, Integer>();
+
+
     }
 }

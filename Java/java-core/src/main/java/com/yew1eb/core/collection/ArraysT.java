@@ -13,6 +13,12 @@ public class ArraysT {
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public static void main(String[] args) throws ParseException {
+        int [][] axx = new int[123][2342];
+        int [] dx = new int[]{1,2};
+
+        List<Integer> intList = new ArrayList<>(2);
+        intList.add(23);intList.add(23);intList.add(23);intList.add(23);
+        System.out.println(intList);
         String str = "hostName";
 
         long start = System.currentTimeMillis();

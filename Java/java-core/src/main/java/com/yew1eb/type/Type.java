@@ -8,6 +8,7 @@ package com.yew1eb.type;
 public class Type {
 
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
+        Integer integer = 10;
+        int i = integer;
     }
 }
